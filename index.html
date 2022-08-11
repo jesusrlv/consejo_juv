@@ -16,58 +16,92 @@
         html,body{
             margin: 0;
             padding: 0;
+            
         }
+        #imagen{
+            background-image: url('assets/img/background.jpg'); /* The image used */
+            width: auto;
+            height: 100%; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+            position:relative;
+        }
+         /* On screens that are 992px wide or less, go from four columns to two columns */
+      /* tablets, celular horizontal y otros dispositivos */
+      @media screen and (max-width: 2000px) {
+        #selector1{
+          width:50%;
+        }
+       
+        /* #card_tamano{
+            height:350px;
+          } */
+      }
+      /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+      /* CELULAR */
+      @media screen and (max-width: 600px) {
+          #col1 {
+              height: 100%;
+              padding-top: 130px;
+              }
+         
+          /* #card_tamano{
+            height:175px;
+          } */
+          
+      }
     </style>
     <!-- <link rel="stylesheet" href="assets/css/signin.css"> -->
     <body>
-        <div class="container-fluid" height="100%">
-            <div class="row justify-content-center h-100">
-                <div class="col-sm-6 mt-5">
-                    <p class="h1 text-center"><img src="assets/img/logo_injuventud.png" width="18%" alt=""></p>
-                    <p class="h1 text-center">Gobierno del Estado de Zacatecas</p>
-                    <p class="h3 text-center">Instituto de la Juventud</p>
-                    <p class="h5 text-center">Consejo Juvenil</p>
-                    <p class="mt-5" style="align-content:center;">
-                        <form action="#" class="form-signin" style="width: 100%; max-width: 720px; padding: 15px;margin: auto;">
-                            <div class="container w-50">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
-                                        <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1">
+        <div class="container-marketing" height="100%">
+            <div class="row justify-content-around align-items-center" >
+                <div id="imagen">
+                    <div class="col-sm-6 h-100" id="col1">
+                        <p class="h1 text-center"><img src="assets/img/logo_injuventud.png" width="27%" alt=""></p>
+                        <p class="h1 text-center">Gobierno del Estado de Zacatecas</p>
+                        <p class="h3 text-center">Instituto de la Juventud</p>
+                        <p class="h5 text-center">Consejo Juvenil</p>
+                        <!-- <p class="mt-5" style="align-content:center;"> -->
+                            <form action="#" class="form-signin mt-5" style="width: 100%; max-width: 810px;margin: auto;">
+                                <div class="container w-50">
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
+                                            <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-fingerprint"></i></span>
+                                            <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <button class="btn btn-primary" type="button"><i class="bi bi-key-fill"></i> Acceso</button>
+                                        </div>
+                                        <hr class="w-100 text-center">
+                                        <div class="d-grid gap-2 col-8 mx-auto">
+                                            <a href="#" style="text-decoration:none ;" class="text-center"><i class="bi bi-person-plus-fill"></i> Registrarse</a>
+                                            <h6 class="text-light mt-2 text-center"><a href="#" style="text-decoration:none;"><small>¿Olvidaste tu contraseña?</a></small></h6>
+                                        </div>
+                                        <div class="d-grid gap-2 col-12 mx-auto">
+                                            <hr>
+                                            <span class="text-secondary text-center"><small><strong>Desarrollo:</strong> Departamento de Tecnologías de la Información | INJUVENTUD</small></span>
+                                        </div>
+                                        
                                     </div>
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-fingerprint"></i></span>
-                                        <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
-                                    </div>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <button class="btn btn-primary" type="button"><i class="bi bi-key-fill"></i> Acceso</button>
-                                    </div>
-                                    <hr class="w-100 text-center">
-                                    <div class="d-grid gap-2 col-8 mx-auto">
-                                        <a href="#" style="text-decoration:none ;" class="text-center"><i class="bi bi-person-plus-fill"></i> Registrarse</a>
-                                        <h6 class="text-light mt-2 text-center"><a href="#" style="text-decoration:none;"><small>¿Olvidaste tu contraseña?</a></small></h6>
-                                      </div>
-                                    <div class="d-grid gap-2 col-12 mx-auto">
-                                        <hr>
-                                        <span class="text-secondary text-center"><small><strong>Desarrollo:</strong> Departamento de Tecnologías de la Información | INJUVENTUD</small></span>
-                                      </div>
-                                    
                                 </div>
-                            </div>
-                        </form>
-                        
-                          
-                    </p>
+                            </form>
+                            
+                            
+                        <!-- </p> -->
+                    </div>
                 </div>
-                <div class="col-sm-6 h-100" style="background-color:#83272b ;">
-                    <div class="container h-100">
-                            <div class="pt-5">
-                                <p>
-                                    <span class="h3 text-light pt-3 m-5 mt-5">Contenido adicional</span>
-                                </p>
+                <div class="col-sm-6 h-100" style="background-color:#83272b;" id="col2">
+                    <div class="container">
+                            <!-- <div class="mt-1">
+                                <p class="h3 text-light">Contenido adicional</p>
                                 <hr class="text-light">
-                            </div>  
-                        <div class="row g-1 h-100 vh-100 justify-content-around align-items-center">
+                            </div>   -->
+                        <div class="row g-1 vh-100 justify-content-around align-items-center">
                             <div class="col-sm-4">
                               <div class="card" style="background-color: #b14947;">
                                     <div class="card-header text-light">
@@ -99,8 +133,8 @@
                                 </div>
                                 <div class="card-body">
                                   <h5 class="card-title text-light"><i class="bi bi-filetype-pdf"></i> Regresar a la página principal</h5>
-                                  <p class="card-text text-light">Página oficial INJUVENTUD.</p>
-                                  <a href="#" class="btn btn-outline-light"><i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+                                  <p class="card-text text-light">Página oficial<br>INJUVENTUD.</p>
+                                  <a href="#" class="btn btn-outline-light">Regresar</a>
                                 </div>
                               </div>
                             </div>
