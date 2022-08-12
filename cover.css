@@ -7,7 +7,7 @@
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  color: #333;
+  color: rgb(173, 161, 161);
   text-shadow: none; /* Prevent inheritance from `body` */
 }
 
@@ -33,7 +33,7 @@ body {
  */
 
 .nav-masthead .nav-link {
-  color: rgba(36, 33, 33, 0.68);
+  color: rgb(255, 255, 255);
   border-bottom: .25rem solid transparent;
 }
 
@@ -48,7 +48,7 @@ body {
 
 .nav-masthead .active {
   color: rgb(255, 252, 252);
-  border-bottom-color: rgb(0, 0, 0);
+  border-bottom-color: rgb(255, 255, 255);
 }
 #preForm{
   background-color: rgba(131, 39, 43, 0.7);
