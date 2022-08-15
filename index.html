@@ -1,147 +1,241 @@
-<html lang="es">
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>INJUVENTUD | Consejo Juvenil</title>
+    <link rel="icon" type="image/png" href="assets/img/icon.ico"/>
 
-    <header>
-        <title>INJUVENTUD | Consejo Juvenil</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="assets/img/icon.ico"/>
-    
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    </header>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        html,body{
-            margin: 0;
-            padding: 0;
-            
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
-        #imagen{
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      #imagen{
             background-image: url('assets/img/background.jpg'); /* The image used */
             width: auto;
+            height: 100%;
+            background-color: #3ee3aff7;
             height: 100%; /* You must set a specified height */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Do not repeat the image */
             background-size: cover; /* Resize the background image to cover the entire container */
-            position:relative;
+            /* position:relative; */
         }
-         /* On screens that are 992px wide or less, go from four columns to two columns */
-      /* tablets, celular horizontal y otros dispositivos */
-      @media screen and (max-width: 2000px) {
-        #selector1{
-          width:50%;
+        #linkPrincipal a:link {
+          text-decoration: none;
         }
-       
-        /* #card_tamano{
-            height:350px;
-          } */
-      }
-      /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-      /* CELULAR */
-      @media screen and (max-width: 600px) {
-          #col1 {
-              height: 100%;
-              padding-top: 130px;
-              }
-         
-          /* #card_tamano{
-            height:175px;
-          } */
-          
-      }
+        #linkPrincipal a:visited {
+          text-decoration: none;
+        }
+        #linkPrincipal a:hover {
+          text-decoration: none;
+        }
     </style>
-    <!-- <link rel="stylesheet" href="assets/css/signin.css"> -->
-    <body>
-        <div class="container-marketing" height="100%">
-            <div class="row justify-content-around align-items-center" >
-                <div id="imagen">
-                    <div class="col-sm-6 h-100" id="col1">
-                        <p class="h1 text-center"><img src="assets/img/logo_injuventud.png" width="27%" alt=""></p>
-                        <p class="h1 text-center">Gobierno del Estado de Zacatecas</p>
-                        <p class="h3 text-center">Instituto de la Juventud</p>
-                        <p class="h5 text-center">Consejo Juvenil</p>
-                        <!-- <p class="mt-5" style="align-content:center;"> -->
-                            <form action="#" class="form-signin mt-5" style="width: 100%; max-width: 810px;margin: auto;">
-                                <div class="container w-50">
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
-                                            <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1">
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-fingerprint"></i></span>
-                                            <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
-                                        </div>
-                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                            <button class="btn btn-primary" type="button"><i class="bi bi-key-fill"></i> Acceso</button>
-                                        </div>
-                                        <hr class="w-100 text-center">
-                                        <div class="d-grid gap-2 col-8 mx-auto">
-                                            <a href="#" style="text-decoration:none ;" class="text-center"><i class="bi bi-person-plus-fill"></i> Registrarse</a>
-                                            <h6 class="text-light mt-2 text-center"><a href="#" style="text-decoration:none;"><small>¿Olvidaste tu contraseña?</a></small></h6>
-                                        </div>
-                                        <div class="d-grid gap-2 col-12 mx-auto">
-                                            <hr>
-                                            <span class="text-secondary text-center"><small><strong>Desarrollo:</strong> Departamento de Tecnologías de la Información | INJUVENTUD</small></span>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </form>
-                            
-                            
-                        <!-- </p> -->
-                    </div>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-bg-dark" id="imagen">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <!-- <a href="#" class="nav-brand" style="text-decoration: none ;" id="linkPrincipal">
+        <img src="assets/img/logo_injuventud.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+        <h3 class="float-md-start mb-0">INJUVENTUD</h3> 
+      </a> -->
+      
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/logo_injuventud.png" alt="" width="27" height="27" class="d-inline-block align-text-top">
+            INJUVENTUD
+          </a>
+          <div class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#">Convocatoria</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#">Documentos</a>
+        </div>
+      </nav>
+      
+      <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Inicio</a>
+        <a class="nav-link fw-bold py-1 px-0" href="#">Convocatoria</a>
+        <a class="nav-link fw-bold py-1 px-0" href="#">Documentos</a>
+      </nav> -->
+    </div>
+  </header>
+
+  <main class="px-3" id="preForm">
+    <p class="h1 text-center"><img src="assets/img/logo_injuventud.png" width="27%" alt="" id="imgLogo"></p>
+    <h1 id="textoGob">Gobierno del estado de<br>Zacatecas</h1>
+    <p class="lead" id="textoGob">Instituto de la juventud</p>
+    <p class="lead" id="textoGob">Consejo Juvenil</p>
+    <p class="lead">
+      <form action="#" class="form-signin mt-5" style="width: 100%; max-width: 810px;margin: auto;">
+        <div class="container w-75">
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
+                    <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1">
                 </div>
-                <div class="col-sm-6 h-100" style="background-color:#83272b;" id="col2">
-                    <div class="container">
-                            <!-- <div class="mt-1">
-                                <p class="h3 text-light">Contenido adicional</p>
-                                <hr class="text-light">
-                            </div>   -->
-                        <div class="row g-1 vh-100 justify-content-around align-items-center">
-                            <div class="col-sm-4">
-                              <div class="card" style="background-color: #b14947;">
-                                    <div class="card-header text-light">
-                                        <i class="bi bi-check-square-fill"></i> Convocatoria
-                                    </div>
-                                <div class="card-body">
-                                  <h5 class="card-title text-light"><i class="bi bi-filetype-pdf"></i> Descarga de convocatoria</h5>
-                                  <p class="card-text text-light">Conoce la convocatoria en versión PDF para poder participar.</p>
-                                  <a href="#" class="btn btn-outline-light"><i class="bi bi-cloud-download-fill"></i> Descargar</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-4">
-                              <div class="card" style="background-color: #c75a54;">
-                                <div class="card-header text-light">
-                                    <i class="bi bi-check-square-fill"></i> Documentos
-                                </div>
-                                <div class="card-body">
-                                  <h5 class="card-title text-light"><i class="bi bi-filetype-pdf"></i> Descarga de documentos</h5>
-                                  <p class="card-text text-light">Revisa la lista de documentos requeridos para participar.</p>
-                                  <a href="#" class="btn btn-outline-light"><i class="bi bi-list-check"></i> Ver listado</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-4">
-                              <div class="card" style="background-color: #CF7C80;">
-                                <div class="card-header text-light">
-                                    <i class="bi bi-door-open"></i> Salir
-                                </div>
-                                <div class="card-body">
-                                  <h5 class="card-title text-light"><i class="bi bi-filetype-pdf"></i> Regresar a la página principal</h5>
-                                  <p class="card-text text-light">Página oficial<br>INJUVENTUD.</p>
-                                  <a href="#" class="btn btn-outline-light">Regresar</a>
-                                </div>
-                              </div>
-                            </div>
-                        </div>                        
-                    </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-fingerprint"></i></span>
+                    <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
                 </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary" type="button"><i class="bi bi-key-fill"></i> Acceso</button>
+                </div>
+                <hr class="w-100 text-center">
+                <div class="d-grid gap-2 col-8 mx-auto">
+                    <a href="#" style="text-decoration:none ;text-decoration-color: aliceblue;" class="text-center text-light"  data-bs-toggle="modal" data-bs-target="#registro"><i class="bi bi-person-plus-fill"></i> Registrarse</a>
+                    <h6 class="text-light mt-2 text-center"><a href="#" style="text-decoration:none;" class="text-light"  data-bs-toggle="modal" data-bs-target="#pwd"><small>¿Olvidaste tu contraseña?</a></small></h6>
+                </div>
+                <div class="d-grid gap-2 col-12 mx-auto">
+                    <hr>
+                    <span class="text-secondary text-center text-light"><small><strong>Desarrollo:</strong> Departamento de Tecnologías de la Información | INJUVENTUD</small></span>
+                </div>
+                
             </div>
         </div>
-    </body>
+    </form>
+    </p>
+  </main>
+
+  <footer class="mt-auto text-white-50">
+    <p></p>
+  </footer>
+</div>
+
+
+    
+  </body>
 </html>
+
+<!-- zona modal's -->
+<!-- registro -->
+<div class="modal fade" id="registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title text-black" id="exampleModalLabel"><i class="bi bi-person-plus-fill"></i> Registro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <p class="mt-3"><span class="text-dark">Datos personales</span></p>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
+          <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-card-list"></i></span>
+          <input type="text" class="form-control" placeholder="Domicilio" aria-label="Domicilio" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-braces-asterisk"></i></span>
+          <input type="text" class="form-control" placeholder="CURP" aria-label="CURP" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
+          <input type="number" class="form-control" placeholder="Edad" aria-label="Edad" aria-describedby="basic-addon1">
+        </div>
+        <p><span class="text-dark">Datos de acceso</span></p>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-fill"></i></span>
+          <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-question-lg"></i></span>
+          <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+        </div>
+                
+      </div>
+      <div class="modal-footer bg-light">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-plus-circle-fill"></i> Registrarse</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- pwd -->
+<div class="modal fade" id="pwd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title text-black" id="exampleModalLabel"><i class="bi bi-envelope-check"></i> Recuperar contraseña</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-fill"></i></span>
+          <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="basic-addon1">
+          <div id="emailHelp" class="form-text text-black">Se enviará un correo electrónico para recuperar tu contraseña.</div>
+        </div>
+      </div>
+      <div class="modal-footer bg-light">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-envelope-check"></i> Recuperar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- zona modal's -->
