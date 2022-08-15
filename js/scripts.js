@@ -85,3 +85,23 @@
             
         return true; //Validado
     }
+
+    // VALIDA USUARIO REGISTRADO
+ 
+    $(document).ready(function() {	
+        $('#username').on('blur', function() {
+            $('#result-username2').html('<img src="img/loader.gif" />').fadeOut(1000);
+    
+            var username = $(this).val();		
+            var dataString = 'username='+username;
+    
+            $.ajax({
+                type: "POST",
+                url: "prcd/verficacion.php",
+                data: dataString,
+                success: function(data) {
+                    $('#result-username2').fadeIn(1000).html(data);
+                }
+            });
+        });              
+    });    
