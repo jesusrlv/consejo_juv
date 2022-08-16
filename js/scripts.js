@@ -113,3 +113,91 @@
             });
         });              
     });    
+    $(document).ready(function() {	
+        $('#curpUSA').on('blur', function() {
+            $('#result-username4').html('<img src="img/loader.gif" />').fadeOut(1000);
+    
+            var username = $(this).val();		
+            var dataString = 'username='+username;
+    
+            $.ajax({
+                type: "POST",
+                url: "prcd/verficacion.php",
+                data: dataString,
+                success: function(data) {
+                    $('#result-username4').fadeIn(1000).html(data);
+                }
+            });
+        });              
+    });    
+
+    // LOGIN
+
+$(document).ready(function() {
+    $('#pwdForm').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: 'prcd/login.php',
+            data: $(this).serialize(),
+            success: function(response)
+            {
+                var jsonData = JSON.parse(response);
+ 
+                // user is logged in successfully in the back-end
+                // let's redirect
+                if (jsonData.success == "1")
+                {
+                    // location.href = 'my_profile.php';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Usuario correcto',
+                        text: 'Credenciales correctas',
+                        footer: 'INJUVENTUD</a>'
+                    }).then(function(){window.location='../index.html';});
+                }
+                if (jsonData.success == "2")
+                {
+                    // location.href = 'my_profile.php';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Usuario correcto',
+                        text: 'Credenciales correctas',
+                        footer: 'INJUVENTUD</a>'
+                    }).then(function(){window.location='../sistema/usuario/index.html';});
+                }
+                else if (jsonData.success == "3")
+                {
+                    // location.href = 'my_profile.php';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Usuario correcto',
+                        text: 'Credenciales correctas',
+                        footer: 'INJUVENTUD</a>'
+                    }).then(function(){window.location='../sistema/admin/index.html';});
+                }
+                else if (jsonData.success == "4")
+                {
+                    // location.href = 'my_profile.php';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Usuario correcto',
+                        text: 'Credenciales correctas',
+                        footer: 'INJUVENTUD</a>'
+                    }).then(function(){window.location='../sistema/jurado/index.html';});
+                }
+                else
+                {
+                    // alert('Invalid Credentials!');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Datos incorrectos',
+                        text: 'Credenciales incorrectas',
+                        footer: 'INJUVENTUD</a>'
+                    }).then(function(){window.location='index.php';});
+                    // });
+                }
+           }
+       });
+     });
+});
