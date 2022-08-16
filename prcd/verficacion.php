@@ -5,7 +5,7 @@ if (isset($_POST)) {
     $username = (string)$_POST['username'];
  
     $result = $conn->query(
-        'SELECT * FROM usr WHERE curp = "'.strtolower($username).'"'
+        "SELECT * FROM usr WHERE curp = '$username'"
     );
  
     if ($result->num_rows > 0) {

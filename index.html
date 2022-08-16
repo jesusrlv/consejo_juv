@@ -196,8 +196,8 @@
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-braces-asterisk"></i></span>
           <input type="text" class="form-control" placeholder="CURP" aria-label="CURP" id="curp" oninput="curp2date(this)" aria-describedby="basic-addon1" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this);">
         </div>
-              <p><div id="result-username"></div></p><!-- valida curp -->
-              <p><div id="result-username2"></div></p><!-- valida usr -->
+              
+              
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
           <input type="number" class="form-control" placeholder="Edad" aria-label="Edad" aria-describedby="basic-addon1" id="edad" disabled >
@@ -211,11 +211,16 @@
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-question-lg"></i></span>
           <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
         </div>
+        <p><span class="text-dark">Verificación</span>
+            <div id="result-username">
+              <div class="alert alert-light"><strong><i class="bi bi-x-circle-fill"></i> CURP.</strong> Se verificará tu CURP.</div>
+            </div></p><!-- valida curp -->
+            <p><div id="result-username2"></div></p><!-- valida usr -->
                 
       </div>
       <div class="modal-footer bg-light">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
-        <button type="button" class="btn btn-outline-primary"><i class="bi bi-plus-circle-fill"></i> Registrarse</button>
+        <button type="button" class="btn btn-outline-primary" id="boton_submit"><i class="bi bi-plus-circle-fill"></i> Registrarse</button>
       </div>
     </div>
   </div>
