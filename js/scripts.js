@@ -29,6 +29,14 @@
         resultado.classList.add("ok");
         // resultado.innerText = "Su edad es: " + edad + " años.";
         document.getElementById("edad").value = edad;
+
+        var cumplidos = document.getElementById("edad").value;
+        if ( cumplidos < 12 || cumplidos > 29 ){
+            document.getElementById("result-username3").innerHTML = '<div class="alert alert-danger text-start"><strong><i class="bi bi-x-circle-fill"></i> ERROR.</strong> Tu edad no está permitida en la convocatoria.</div><style>#boton_submit{display:none;}</style>';
+        }
+        else{
+            document.getElementById("result-username3").innerHTML = '<div class="alert alert-success text-start"><strong><i class="bi bi-check-square"></i> CORRECTO. </strong> Edad correcta.</div>';
+        }
       }
       
       function calcularEdad(fecha) {
@@ -54,7 +62,7 @@
                 
             if (curpValida(curp)) {
                 valido = "Válido";
-                resultado.innerHTML ='<div class="alert alert-success"><strong><i class="bi bi-info-circle-fill"></i> CORRECTO. </strong> Cadena CURP correcta.</div>';
+                resultado.innerHTML ='<div class="alert alert-success text-start"><strong><i class="bi bi-check-square"></i> CORRECTO. </strong> Cadena CURP correcta.</div>';
             } else {
                 resultado.innerHTML = '<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena CURP incorrecta.</div><style>#boton_submit{display:none;}</style>';
             }
