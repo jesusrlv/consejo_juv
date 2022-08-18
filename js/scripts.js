@@ -154,9 +154,9 @@ $(document).ready(function() {
                         title: 'Usuario correcto',
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD</a>'
-                    }).then(function(){window.location='../index.html';});
+                    }).then(function(){window.location='../sistema/index.html';});
                 }
-                if (jsonData.success == "2")
+                else if (jsonData.success == "2")
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
@@ -194,10 +194,12 @@ $(document).ready(function() {
                         title: 'Datos incorrectos',
                         text: 'Credenciales incorrectas',
                         footer: 'INJUVENTUD</a>'
-                    }).then(function(){window.location='index.php';});
+                    }).then(function(){window.location='../index.php';});
                     // });
                 }
            }
        });
      });
 });
+
+
