@@ -8,7 +8,6 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
     $resultado_sql = $conn->query($sql);
     if($row_sql=mysqli_fetch_array($resultado_sql)){
         
-        // $row_sql=mysqli_fetch_array($resultado_sql);
         if($row_sql['perfil'] == 1){
             echo json_encode(array('success' => 1));
         }
@@ -26,7 +25,6 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
             echo json_encode(array('success' => 0));
         }
    
-    
 } else {
     echo json_encode(array('success' => 0));
 }
