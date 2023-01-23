@@ -153,38 +153,38 @@ $(document).ready(function() {
                         icon: 'success',
                         title: 'Usuario correcto',
                         text: 'Credenciales correctas',
-                        footer: 'INJUVENTUD</a>'
-                    }).then(function(){window.location='../sistema/usuario/index.html';});
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='sistema/usuario/index.html';});
                 }
                 else if (jsonData.success == "2")
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
                         icon: 'success',
-                        title: 'Usuario correcto',
+                        title: 'Usuario Admin correcto',
                         text: 'Credenciales correctas',
-                        footer: 'INJUVENTUD</a>'
-                    }).then(function(){window.location='../sistema/admin/index.html';});
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='sistema/admin/index.html';});
                 }
                 else if (jsonData.success == "3")
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
                         icon: 'success',
-                        title: 'Usuario correcto',
+                        title: 'Usuario Jurado correcto',
                         text: 'Credenciales correctas',
-                        footer: 'INJUVENTUD</a>'
-                    }).then(function(){window.location='../sistema/jurado/index.html';});
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='sistema/jurado/index.html';});
                 }
                 else if (jsonData.success == "4")
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
                         icon: 'success',
-                        title: 'Usuario correcto',
+                        title: 'Usuario Migrtante correcto',
                         text: 'Credenciales correctas',
-                        footer: 'INJUVENTUD</a>'
-                    }).then(function(){window.location='../sistema/migrante/index.html';});
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='sistema/migrante/index.html';});
                 }
                 else
                 {
@@ -193,8 +193,8 @@ $(document).ready(function() {
                         icon: 'error',
                         title: 'Datos incorrectos',
                         text: 'Credenciales incorrectas',
-                        footer: 'INJUVENTUD</a>'
-                    }).then(function(){window.location='../index.php';});
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='index.html';});
                     // });
                 }
            }
