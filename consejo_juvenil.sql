@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-08-2022 a las 20:38:58
+-- Tiempo de generación: 23-01-2023 a las 23:22:33
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -31,6 +31,17 @@ CREATE TABLE `calificacion` (
   `id` int(11) NOT NULL,
   `calificacion` int(11) NOT NULL,
   `id_ext` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `catalogo_documentos`
+--
+
+CREATE TABLE `catalogo_documentos` (
+  `id` int(11) NOT NULL,
+  `documento` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -70,8 +81,22 @@ CREATE TABLE `usr` (
   `usr` varchar(36) NOT NULL,
   `pwd` varchar(20) NOT NULL,
   `perfil` int(11) NOT NULL,
-  `curp` varchar(18) NOT NULL
+  `curp` varchar(18) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usr`
+--
+
+INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`, `curp`) VALUES
+(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04'),
+(2, 'usr2', '123456789', 1, 'LEVJ810924HZSXLS05'),
+(3, 'usr3', '123456789', 1, 'LEVJ810924HZSXLS06'),
+(4, 'admin', '123456789', 2, 'LEVJ'),
+(5, 'admin2', '123456789', 2, NULL),
+(6, 'califica1', '123456789', 3, NULL),
+(7, 'califica2', '123456789', 3, NULL),
+(8, 'califica3', '123456789', 3, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -81,6 +106,12 @@ CREATE TABLE `usr` (
 -- Indices de la tabla `calificacion`
 --
 ALTER TABLE `calificacion`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `catalogo_documentos`
+--
+ALTER TABLE `catalogo_documentos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -112,6 +143,12 @@ ALTER TABLE `calificacion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `catalogo_documentos`
+--
+ALTER TABLE `catalogo_documentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `datos`
 --
 ALTER TABLE `datos`
@@ -127,7 +164,7 @@ ALTER TABLE `documentos`
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
