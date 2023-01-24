@@ -168,26 +168,24 @@ $perfil = $_SESSION['perfil'];
         <div class="col">
           <div class="card border-primary" style="height:300px">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <h5 class="card-title">Convocatoria</h5>
+              <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-triangle-fill text-warning"></i> Convocatoria vigente</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="card-link" style="text-decoration: none">Card link</a>
               <a href="#" class="card-link" style="text-decoration: none">Another link</a>
             </div>
           </div>
         </div>
-
-        <div class="col">
+        <? include('query/docs_contador.php'); ?>
+        <!-- <div class="col">
           <div class="card border-primary" style="height:300px">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link" style="text-decoration: none">Card link</a>
-              <a href="#" class="card-link" style="text-decoration: none">Another link</a>
+              <p><h5 class="card-title">Estatus del perfil</h5></p>
+              <p><h6 class="card-subtitle mb-2 text-muted">Documentos cargados en el sistema</h6></p>
+                <p class="card-text text-center display-1">0</p>
             </div>
           </div>
-        </div>
+        </div> -->
         
       </div><!-- row -->
     </div>

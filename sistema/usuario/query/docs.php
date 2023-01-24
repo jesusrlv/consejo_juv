@@ -4,6 +4,7 @@ include('qc.php');
 
 $sqlQuery = "SELECT * FROM catalogo_documentos ORDER BY id ASC";
 $resultadoQuery = $conn -> query($sqlQuery);
+$noCatalogoquery = mysqli_num_rows($resultadoQuery);
 // $rowQuery = $resultadoQuery ->fetch_assoc();
 
 while($rowQuery = $resultadoQuery ->fetch_assoc()){
@@ -21,7 +22,12 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
         <div class="card border-danger" style="height:300px; background-color:rgba(250, 6, 22, 0.1);">
         ';
         }
-        else{
+        else if($no_resultados == 1){
+            echo '
+        <div class="card border-warning" style="height:300px">
+            ';
+        }
+        else if($no_resultados == $noCatalogoquery){
             echo '
         <div class="card border-success" style="height:300px">
             ';
