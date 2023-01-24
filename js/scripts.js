@@ -154,7 +154,7 @@ $(document).ready(function() {
                         title: 'Usuario correcto',
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD'
-                    }).then(function(){window.location='sistema/usuario/index.html';});
+                    }).then(function(){window.location='sistema/usuario/index.php';});
                 }
                 else if (jsonData.success == "2")
                 {
@@ -164,7 +164,7 @@ $(document).ready(function() {
                         title: 'Usuario Admin correcto',
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD'
-                    }).then(function(){window.location='sistema/admin/index.html';});
+                    }).then(function(){window.location='sistema/admin/index.php';});
                 }
                 else if (jsonData.success == "3")
                 {
@@ -174,7 +174,7 @@ $(document).ready(function() {
                         title: 'Usuario Jurado correcto',
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD'
-                    }).then(function(){window.location='sistema/jurado/index.html';});
+                    }).then(function(){window.location='sistema/jurado/index.php';});
                 }
                 else if (jsonData.success == "4")
                 {
@@ -184,7 +184,7 @@ $(document).ready(function() {
                         title: 'Usuario Migrtante correcto',
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD'
-                    }).then(function(){window.location='sistema/migrante/index.html';});
+                    }).then(function(){window.location='sistema/migrante/index.php';});
                 }
                 else
                 {
@@ -201,5 +201,3 @@ $(document).ready(function() {
        });
      });
 });
-
-

@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$usr = $_SESSION['usr'];
+$perfil = $_SESSION['perfil'];
+
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -14,14 +21,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+    <!-- <script src="../../js/index.js"></script> -->
+
      <!-- type font -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap" rel="stylesheet"> 
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-
-<link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       body{
@@ -137,79 +147,44 @@
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="mb-4">
-        <p><span class="h2" id="seccion_documentos"><i class="bi bi-filetype-pdf"></i> Sección de carga de documentos</span></p>
-        <p><small>Carga los documentos <strong>(formato PDF)</strong> para poder participar como postulante.</small></p>
+        <p><span class="h2" id="seccion_convocatoria"><i class="bi bi-file-earmark-break"></i> Sección de convocatoria</span></p>
+        <p><small>Información de<strong> datos personales</strong> y acerca de la convocatoria.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         
         <div class="col">
-          <div class="card" >
+          <div class="card border-primary" style="height:300px">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <h5 class="card-title">Datos del usuario</h5>
+              <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-circle text-danger"></i> Obligatoria</h6>
+              <p class="card-text">Debes tener a la mano los datos personales como: Nombre, Apellido(s), Domicilio, CURP, Municipio, Escolaridad, etcétera. Para poder llenar los documentos, debes completar de manera inicial esta sección</p>
+              <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
+              <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar</a>
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card" >
+          <div class="card border-primary" style="height:300px">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link" style="text-decoration: none">Card link</a>
+              <a href="#" class="card-link" style="text-decoration: none">Another link</a>
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card" >
+          <div class="card border-primary" style="height:300px">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link" style="text-decoration: none">Card link</a>
+              <a href="#" class="card-link" style="text-decoration: none">Another link</a>
             </div>
           </div>
         </div>
@@ -221,49 +196,14 @@
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="mb-4">
-        <p><span class="h2" id="seccion_convocatoria"><i class="bi bi-file-earmark-break"></i> Sección de convocatoria</span></p>
+        <p><span class="h2" id="seccion_documentos"><i class="bi bi-filetype-pdf"></i> Sección de carga de documentos</span></p>
         <p><small>Carga los documentos <strong>(formato PDF)</strong> para poder participar como postulante.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        
-        <div class="col">
-          <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title">Datos del usuario</h5>
-              <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-circle text-danger"></i> Obligatoria</h6>
-              <p class="card-text">Debes tener a la mano los datos personales como: Nombre, Apellido(s), Domicilio, CURP, Municipio, Escolaridad, etcétera. Para poder llenar los documentos, debes completar de manera inicial esta sección</p>
-              <a href="#" class="card-link"><i class="bi bi-eye"></i> Revisar</a>
-              <a href="#" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
-            </div>
-          </div>
-        </div>
+       
+        <? include('query/docs.php'); ?>
 
-        <div class="col">
-          <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-        
-        
       </div><!-- row -->
     </div>
   </div>
@@ -281,8 +221,20 @@
 </footer>
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       
   </body>
 </html>
+
+<script>
+    $("a[href^='#']").click(function(e) {
+    e.preventDefault();
+    
+    var position = $($(this).attr("href")).offset().top;
+
+    $("body, html").animate({
+        scrollTop: position
+    } /* speed */ );
+});
+</script>
