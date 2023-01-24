@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-01-2023 a las 23:22:33
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.28
+-- Tiempo de generación: 24-01-2023 a las 03:24:42
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -41,8 +40,25 @@ CREATE TABLE `calificacion` (
 
 CREATE TABLE `catalogo_documentos` (
   `id` int(11) NOT NULL,
-  `documento` varchar(50) NOT NULL
+  `documento` varchar(50) NOT NULL,
+  `subtitulo` varchar(50) NOT NULL,
+  `descripcion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `catalogo_documentos`
+--
+
+INSERT INTO `catalogo_documentos` (`id`, `documento`, `subtitulo`, `descripcion`) VALUES
+(1, 'Carta exposición de motivos ', 'Carta exposición de motivos ', 'Carta exposición de motivos dirigida al Titular del Instituto de la Juventud, en la cual se expresen las razones por las cuales tiene interés en postularse como integrante del Consejo Juvenil del Estado de Zacatecas'),
+(2, 'Documento que acredite OSC', 'Documento que acredite OSC', 'Documento que acredite que pertenece a alguna Organización de la Sociedad Civil, que tenga relación con el desarrollo de las y los jóvenes; Titular de Instancia Municipal en alguno de los 58 Municipios; o inscrito (a) en alguna Institución Educativa ya sea de Nivel Medio Superior o Superior'),
+(3, 'Copia simple del acta de Nacimiento', 'Copia simple del acta de Nacimiento', 'Copia simple del acta de Nacimiento'),
+(4, 'Copia simple de credencial de elector', 'Copia simple de credencial de elector', 'Copia simple de credencial de elector; en caso de ser menor de edad debe presentar copia del padre de familia o tutor'),
+(5, 'Copia simple de la CURP', 'Copia simple de la CURP', 'Copia simple de la CURP'),
+(6, 'Copia simple de comprobante de domicilio', 'Copia simple de comprobante de domicilio', 'Copia simple de comprobante de domicilio'),
+(7, 'Carta de no antecedentes penales', 'Carta de no antecedentes penales', 'Carta en la cual manifieste bajo protesta de decir verdad, no estar sujeto a algún proceso penal, o haber sido sentenciado por delitos graves'),
+(8, 'Carta en la cual manifieste de decir verdad', 'Carta en la cual manifieste de decir verdad', 'Carta en la cual manifieste bajo protesta de decir verdad, no encontrarse desempeñando algún cargo de elección popular'),
+(9, 'Currículum vitae actualizado', 'Currículum vitae actualizado', 'Currículum vitae actualizado');
 
 -- --------------------------------------------------------
 
@@ -141,32 +157,26 @@ ALTER TABLE `usr`
 --
 ALTER TABLE `calificacion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `catalogo_documentos`
 --
 ALTER TABLE `catalogo_documentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `datos`
 --
 ALTER TABLE `datos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `documentos`
 --
 ALTER TABLE `documentos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
