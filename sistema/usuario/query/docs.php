@@ -33,13 +33,18 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
             ';
         }
           echo'
-            <div class="card-body">
-              <h5 class="card-title">'.$rowQuery['documento'].'</h5>
-              <h6 class="card-subtitle mb-2 text-muted">'.$rowQuery['subtitulo'].'</h6>
-              <p class="card-text">'.$rowQuery['descripcion'].'</p>
-              <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-plus-circle"></i> Cargar documento</a>
-              <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar</a>
+            
+            <div class="card-body text-justify">
+            <h5 class="card-title"><i class="bi bi-filetype-pdf"></i> '.$rowQuery['documento'].'</h5>
+              <p class="card-text text-justify">'.$rowQuery['descripcion'].'</p>
             </div>
+            <div class="card-footer">
+            <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-plus-circle"></i> Cargar documento</a>
+            <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar</a>
+            <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-file-break"></i></a>
+            
+            </div>
+        
           </div>
         </div>
     ';

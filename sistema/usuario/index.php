@@ -159,6 +159,8 @@ $perfil = $_SESSION['perfil'];
               <h5 class="card-title">Datos del usuario</h5>
               <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-circle text-danger"></i> Obligatoria</h6>
               <p class="card-text">Debes tener a la mano los datos personales como: Nombre, Apellido(s), Domicilio, CURP, Municipio, Escolaridad, etcétera. Para poder llenar los documentos, debes completar de manera inicial esta sección</p>
+            </div>
+            <div class="card-footer">
               <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
               <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar</a>
             </div>
@@ -170,9 +172,11 @@ $perfil = $_SESSION['perfil'];
             <div class="card-body">
               <h5 class="card-title">Convocatoria</h5>
               <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-triangle-fill text-warning"></i> Convocatoria vigente</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link" style="text-decoration: none">Card link</a>
-              <a href="#" class="card-link" style="text-decoration: none">Another link</a>
+              <p class="card-text">Convocatoria vigente acerca de la postulación al Consejo Juvenil 2023.</p>
+              
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
             </div>
           </div>
         </div>
