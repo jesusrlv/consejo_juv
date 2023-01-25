@@ -2,9 +2,9 @@
 
 include('qc.php');
 
-// $sqlQuery = "SELECT * FROM catalogo_documentos ORDER BY id ASC";
-// $resultadoQuery = $conn -> query($sqlQuery);
-// $noCatalogoquery = mysqli_num_rows($resultadoQuery);
+$sqlQuery = "SELECT * FROM catalogo_documentos ORDER BY id ASC";
+$resultadoQuery = $conn -> query($sqlQuery);
+$noCatalogoquery = mysqli_num_rows($resultadoQuery);
 // $rowQuery = $resultadoQuery ->fetch_assoc();
 
 // while($rowQuery = $resultadoQuery ->fetch_assoc()){
@@ -13,7 +13,9 @@ include('qc.php');
     $sqlDocs = "SELECT * FROM documentos WHERE id_ext = '$id'";
     $resultadoDocs = $conn -> query($sqlDocs);
     $no_resultados = mysqli_num_rows($resultadoDocs);
-    // $rowDocs = $resultadoDocs ->fetch_assoc();
+    
+    $resultadoSuma = ($no_resultados * 100)/($noCatalogoquery);
+    $porcentajeDocs = round($resultadoSuma);
         if($no_resultados == 0){
             echo '
             <div class="col">
@@ -34,7 +36,10 @@ include('qc.php');
                     <div class="card-body">
                         <p><h5 class="card-title">Estatus del perfil</h5></p>
                         <p><h6 class="card-subtitle mb-2 text-muted">Documentos cargados en el sistema</h6></p>
-                        <p class="card-text text-center display-1">'.$no_resultados.'</p>
+                        <p class="card-text text-center display-1">'.$no_resultados.'</p><div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: '.$porcentajeDocs.'%">'.$porcentajeDocs.'%</div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

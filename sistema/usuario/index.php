@@ -97,7 +97,7 @@ $perfil = $_SESSION['perfil'];
   <body>
     
 <header>
-  <div class="collapse bg-primary" id="navbarHeader">
+  <!-- <div class="collapse bg-primary" id="navbarHeader">
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
@@ -114,16 +114,14 @@ $perfil = $_SESSION['perfil'];
         </div>
       </div>
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-primary shadow-sm">
+  </div> -->
+  <div class="navbar navbar-dark shadow-sm" style="background:#b94c47">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
         <strong>Consejo Juvenil 2023</strong>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a href="#" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
     </div>
   </div>
 </header>
@@ -133,10 +131,11 @@ $perfil = $_SESSION['perfil'];
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light"><img src="../../img/logo_injuventud_01.png" alt="" width="360"></h1>
-        <h2 class="fw-bold" style="color:#5a5557">Consejo Juvenil</h2>
-        <h2 class="fw-light" style="color:#5a5557">2023</h2>
-        <p class="lead text-muted">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
+        <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
+        <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
+        <h2 class="fw-bold" style="color:#5a5557"><i class="bi bi-person-circle"></i></h2>
+        <h2 class="fw-light" style="color:#5a5557"><? echo $usr ?></h2>
+        <p class="lead text-muted mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr>
           <a href="#seccion_documentos" class="btn btn-primary my-2"><i class="bi bi-filetype-pdf"></i> Sección de documentos</a>

@@ -21,7 +21,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
     ';
         if($no_resultados == 0 || empty($no_resultados)){
             echo '
-        <div class="card border-danger" style="height:300px; background-color:rgba(250, 6, 22, 0.1);">
+        <div class="card border-danger text-light" style="height:300px; background-color:rgba(250, 6, 22, 0.7);">
         ';
         }
         // else if($no_resultados > 0 && $no_resultados <= $no_resultados_warning){
@@ -31,7 +31,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
         // }
         else if($no_resultados > 0){
             echo '
-        <div class="card border-success" style="height:300px; background-color:rgba(117, 183, 152, 0.5);">
+        <div class="card border-success  text-light" style="height:300px; background-color:rgba(8, 66, 152, 0.9);">
             ';
         }
           echo'
@@ -45,12 +45,12 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
             ';
             if($no_resultados == 0 || empty($no_resultados)){
                 echo'
-            <a href="#" class="card-link" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#cargarDoc'.$rowQuery['id'].'"><i class="bi bi-plus-circle"></i> Cargar documento</a>';
+            <a href="#" class="card-link text-light" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#cargarDoc'.$rowQuery['id'].'"><i class="bi bi-plus-circle"></i> Cargar documento</a>';
             }
             else{
                 echo'
-            <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar documento</a>
-            <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar documento</a>
+            <a href="#" class="card-link text-light" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar documento</a>
+            <a href="#" class="card-link text-light" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar documento</a>
             ';
             }
             echo'
