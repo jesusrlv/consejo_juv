@@ -43,10 +43,10 @@ include('qc.php');
         else if($no_resultados == 9){
             echo '
             <div class="col">
-                <div class="card border-success" style="height:300px; background-color:rgba(117, 183, 152, 0.1);">
-                    <div class="card-body">
+                <div class="card border-success" style="height:300px; background-color:rgba(117, 183, 152, 0.9);">
+                    <div class="card-body text-light text-center">
                         <p><h5 class="card-title">Estatus del perfil</h5></p>
-                        <p><h6 class="card-subtitle mb-2 text-muted">Documentos cargados en el sistema</h6></p>
+                        <p><h6 class="card-subtitle mb-2 text-light">Documentos cargados en el sistema</h6></p>
                         <p class="card-text text-center display-1">'.$no_resultados.'</p>
                     </div>
                 </div>

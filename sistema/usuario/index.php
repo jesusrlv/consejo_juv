@@ -139,8 +139,8 @@ $perfil = $_SESSION['perfil'];
         <p class="lead text-muted">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr>
-          <a href="#seccion_documentos" class="btn btn-primary my-2">Sección de documentos</a>
-          <a href="#seccion_convocatoria" class="btn btn-secondary my-2">Sección convocatoria</a>
+          <a href="#seccion_documentos" class="btn btn-primary my-2"><i class="bi bi-filetype-pdf"></i> Sección de documentos</a>
+          <a href="#seccion_convocatoria" class="btn btn-secondary my-2"><i class="bi bi-file-earmark-break"></i> Sección convocatoria</a>
         </p>
       </div>
     </div>
