@@ -97,6 +97,7 @@ $perfil = $_SESSION['perfil'];
   <body>
     
 <header>
+<span id="inicio"></span>
   <!-- <div class="collapse bg-primary" id="navbarHeader">
     <div class="container">
       <div class="row">
@@ -121,7 +122,7 @@ $perfil = $_SESSION['perfil'];
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
         <strong>Consejo Juvenil 2023</strong>
       </a>
-      <a href="#" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
+      <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
     </div>
   </div>
 </header>
@@ -129,7 +130,7 @@ $perfil = $_SESSION['perfil'];
 <main>
 
   <section class="py-5 text-center container">
-    <div class="row py-lg-5">
+    <div class="row py-lg-5"  style="background-image: url('../../img/logo_consejo_05.png')">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
         <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
@@ -177,7 +178,7 @@ $perfil = $_SESSION['perfil'];
               
             </div>
             <div class="card-footer">
-              <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
+              <a href="../../convocatoria/convocatoria_consejo_juvenil_2023.pdf" target="_blank" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
             </div>
           </div>
         </div>
@@ -213,13 +214,13 @@ $perfil = $_SESSION['perfil'];
 
 </main>
 
-<footer class="text-muted py-5">
+<footer class="text-light py-5" style="background:#b23933">
   <div class="container">
     <p class="float-end mb-1">
-      <a href="#">Arriba</a>
+      <a href="#inicio"  style="text-decoration: none;" class="text-light">Arriba</a>
     </p>
-    <p class="mb-1">&copy; Desarrollo por <strong class="text-dark">INJUVENTUD</strong></p>
-    <p class="mb-0"><a href="/">Gobierno del estado de Zacatecas</a>.</p>
+    <p class="mb-1">&copy; Desarrollo por <strong class="text-light">INJUVENTUD</strong></p>
+    <p class="mb-0"><a href="/" style="text-decoration: none;" class="text-light">Gobierno del estado de Zacatecas</a>.</p>
   </div>
 </footer>
 
