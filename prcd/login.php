@@ -13,6 +13,7 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
 
             $_SESSION['usr'] = $id;
             $_SESSION['perfil'] = $row_sql['perfil'];
+            $_SESSION['id'] = $row_sql['id'];
 
             echo json_encode(array('success' => 1));
         }
