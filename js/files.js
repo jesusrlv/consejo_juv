@@ -26,6 +26,7 @@ function _(el) {
 
     //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
     ajax.send(formdata);
+    
 
     function progressHandler(event) {
 

@@ -64,7 +64,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
             <div class="modal-content">
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Cargar documento <strong>'.$rowQuery['documento'].'</strong></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload();"></button>
               </div>
               <div class="modal-body">
                 <form id="upload_form" enctype="multipart/form-data" method="post">';
@@ -78,7 +78,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="window.location.reload();">Cerrar</button>
               </div>
             </div>
           </div>
