@@ -32,7 +32,7 @@ $noCatalogoquery = mysqli_num_rows($resultadoQuery);
         else if($no_resultados == 1 || $no_resultados == 2 || $no_resultados == 3 || $no_resultados == 4 || $no_resultados == 5 || $no_resultados == 6 || $no_resultados == 7 || $no_resultados == 8 ){
             echo '
             <div class="col">
-                <div class="card border-warning" style="height:300px;background-color:rgba 255, 193, 7, 0.1);">
+                <div class="card border-primary bg-warning" style="height:300px;background-color:rgba 255, 193, 7, 0.1);">
                     <div class="card-body">
                         <p><h5 class="card-title">Estatus del perfil</h5></p>
                         <p><h6 class="card-subtitle mb-2 text-muted">Documentos cargados en el sistema</h6></p>
