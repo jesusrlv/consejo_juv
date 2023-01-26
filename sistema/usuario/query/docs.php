@@ -50,7 +50,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
             else{
                 echo'
             <a href="#" class="card-link text-light" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar documento</a>
-            <a href="#" class="card-link text-light" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar documento</a>
+            <a href="../'.$rowDocs['link'].'" target="_blank" class="card-link text-light" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar documento</a>
             ';
             }
             echo'

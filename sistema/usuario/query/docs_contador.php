@@ -24,6 +24,9 @@ $noCatalogoquery = mysqli_num_rows($resultadoQuery);
                         <p><h5 class="card-title">Estatus del perfil</h5></p>
                         <p><h6 class="card-subtitle mb-2 text-muted">Documentos cargados en el sistema</h6></p>
                         <p class="card-text text-center display-1">0</p>
+                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: '.$porcentajeDocs.'%">'.$porcentajeDocs.'%</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -36,7 +39,8 @@ $noCatalogoquery = mysqli_num_rows($resultadoQuery);
                     <div class="card-body">
                         <p><h5 class="card-title">Estatus del perfil</h5></p>
                         <p><h6 class="card-subtitle mb-2 text-muted">Documentos cargados en el sistema</h6></p>
-                        <p class="card-text text-center display-1">'.$no_resultados.'</p><div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <p class="card-text text-center display-1">'.$no_resultados.'</p>
+                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar" style="width: '.$porcentajeDocs.'%">'.$porcentajeDocs.'%</div>
                         </div>
                         
@@ -53,6 +57,9 @@ $noCatalogoquery = mysqli_num_rows($resultadoQuery);
                         <p><h5 class="card-title">Estatus del perfil</h5></p>
                         <p><h6 class="card-subtitle mb-2 text-light">Documentos cargados en el sistema</h6></p>
                         <p class="card-text text-center display-1">'.$no_resultados.'</p>
+                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: '.$porcentajeDocs.'%">'.$porcentajeDocs.'%</div>
+                        </div>
                     </div>
                 </div>
             </div>

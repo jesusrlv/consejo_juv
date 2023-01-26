@@ -1,0 +1,9 @@
+menu de eventos parallax
+https://www.w3schools.com/howto/howto_css_parallax.asp
+
+https://codepen.io/DuskoStamenic/pen/ZEvBKdw
+https://freefrontend.com/css-parallax/
+https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm
+
+para convocatorias
+https://codepen.io/jakob-e/pen/ELqeRM

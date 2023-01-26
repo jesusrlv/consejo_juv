@@ -129,16 +129,18 @@ $perfil = $_SESSION['perfil'];
 
 <main>
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5"  style="background-image: url('../../img/logo_consejo_05.png')">
-      <div class="col-lg-6 col-md-8 mx-auto">
+  <!-- <section class="py-5 text-center container"> -->
+  <section class="text-center container">
+    <!-- <div class="row py-lg-5"  style="background-image: url('../../img/logo_consejo_05.png')"> -->
+    <div class="row py-lg-5"  style="background-image: url('../../assets/img/background.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;width:100%;">
+      <div class="col-lg-6 col-md-8 mx-auto rounded bg-light bg-opacity-50 p-2">
         <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
         <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
         <h2 class="fw-bold" style="color:#5a5557"><i class="bi bi-person-circle"></i></h2>
         <h2 class="fw-light" style="color:#5a5557"><? echo $usr ?></h2>
-        <p class="lead text-muted mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
+        <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
-          <hr>
+          <hr class="text-secondary">
           <a href="#seccion_documentos" class="btn btn-primary my-2"><i class="bi bi-filetype-pdf"></i> Sección de documentos</a>
           <a href="#seccion_convocatoria" class="btn btn-secondary my-2"><i class="bi bi-file-earmark-break"></i> Sección convocatoria</a>
         </p>
@@ -149,7 +151,14 @@ $perfil = $_SESSION['perfil'];
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="mb-4">
-        <p><span class="h2" id="seccion_convocatoria"><i class="bi bi-file-earmark-break"></i> Sección de convocatoria</span></p>
+        <p><span id="seccion_convocatoria"></span>
+          <p class="h2">
+            <i class="bi bi-file-earmark-break"></i> Sección de convocatoria | 
+              <a href="#inicio">
+                <i class="bi bi-arrow-bar-up"></i>
+              </a>
+          </p>
+        </p>
         <p><small>Información de<strong> datos personales</strong> y acerca de la convocatoria.</small></p>
       </div>
       
@@ -200,7 +209,8 @@ $perfil = $_SESSION['perfil'];
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="mb-4">
-        <p><span class="h2" id="seccion_documentos"><i class="bi bi-filetype-pdf"></i> Sección de carga de documentos</span></p>
+        <p><span id="seccion_documentos"></span>
+          <p class="h2" ><i class="bi bi-filetype-pdf"></i> Sección de carga de documentos | <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
         <p><small>Carga los documentos <strong>(formato PDF)</strong> para poder participar como postulante.</small></p>
       </div>
       
@@ -217,7 +227,7 @@ $perfil = $_SESSION['perfil'];
 <footer class="text-light py-5" style="background:#b23933">
   <div class="container">
     <p class="float-end mb-1">
-      <a href="#inicio"  style="text-decoration: none;" class="text-light">Arriba</a>
+      <a href="#inicio"  style="text-decoration: none;" class="text-light"><i class="bi bi-arrow-bar-up"></i> Arriba</a>
     </p>
     <p class="mb-1">&copy; Desarrollo por <strong class="text-light">INJUVENTUD</strong></p>
     <p class="mb-0"><a href="/" style="text-decoration: none;" class="text-light">Gobierno del estado de Zacatecas</a>.</p>
