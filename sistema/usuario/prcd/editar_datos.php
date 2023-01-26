@@ -28,7 +28,7 @@
                 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
-                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" value="'.$rowVisualizar['nombre'].'" name="nombre">
+                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" value="'.$rowVisualizar['nombre'].'" name="nombre" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo"></i></span>
-                        <select class="form-select" aria-label="Municipio" name="municipio">
+                        <select class="form-select" aria-label="Municipio" name="municipio" required>
                             
                             <option value="'.$rowMunicipio['id'].' selected">'.$rowMunicipio['municipio'].'</option>
                             ';
@@ -59,7 +59,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"><i class="bi bi-pencil-square"></i> Actualizar</button>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Actualizar</button>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
                 </form>
             </div>
