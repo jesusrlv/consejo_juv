@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-01-2023 a las 08:32:06
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 5.5.38
+-- Tiempo de generación: 26-01-2023 a las 18:44:15
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -64,19 +65,6 @@ INSERT INTO `catalogo_documentos` (`id`, `documento`, `subtitulo`, `descripcion`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `datos`
---
-
-CREATE TABLE `datos` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
-  `curp` varchar(18) NOT NULL,
-  `edad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `documentos`
 --
 
@@ -101,7 +89,15 @@ INSERT INTO `documentos` (`id`, `documento`, `id_ext`, `link`, `fecha`) VALUES
 (6, 6, 1, 'docs/archivo6_usr1.pdf', '2023-01-25 00:55:14'),
 (7, 7, 1, 'docs/archivo7_usr1.pdf', '2023-01-25 00:56:35'),
 (8, 8, 1, 'docs/archivo8_usr1.pdf', '2023-01-25 01:01:36'),
-(11, 9, 1, 'docs/archivo9_1.pdf', '2023-01-25 01:31:42');
+(11, 9, 1, 'docs/archivo9_1.pdf', '2023-01-25 01:31:42'),
+(12, 1, 2, 'docs/archivo1_2.pdf', '2023-01-25 14:51:24'),
+(13, 6, 2, 'docs/archivo6_2.pdf', '2023-01-25 14:51:39'),
+(14, 8, 2, 'docs/archivo8_2.pdf', '2023-01-25 14:52:25'),
+(15, 1, 3, 'docs/archivo1_3.pdf', '2023-01-25 16:29:43'),
+(16, 2, 3, 'docs/archivo2_3.pdf', '2023-01-25 16:33:49'),
+(17, 9, 3, 'docs/archivo9_3.pdf', '2023-01-25 16:34:02'),
+(18, 3, 3, 'docs/archivo3_3.pdf', '2023-01-25 16:34:58'),
+(19, 5, 3, 'docs/archivo5_3.pdf', '2023-01-26 10:11:55');
 
 -- --------------------------------------------------------
 
@@ -114,22 +110,25 @@ CREATE TABLE `usr` (
   `usr` varchar(36) NOT NULL,
   `pwd` varchar(20) NOT NULL,
   `perfil` int(11) NOT NULL,
-  `curp` varchar(18) DEFAULT NULL
+  `curp` varchar(18) DEFAULT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `edad` int(11) NOT NULL,
+  `municipio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usr`
 --
 
-INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`, `curp`) VALUES
-(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04'),
-(2, 'usr2', '123456789', 1, 'LEVJ810924HZSXLS05'),
-(3, 'usr3', '123456789', 1, 'LEVJ810924HZSXLS06'),
-(4, 'admin', '123456789', 2, 'LEVJ'),
-(5, 'admin2', '123456789', 2, NULL),
-(6, 'califica1', '123456789', 3, NULL),
-(7, 'califica2', '123456789', 3, NULL),
-(8, 'califica3', '123456789', 3, NULL);
+INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`, `curp`, `nombre`, `edad`, `municipio`) VALUES
+(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04', '', 0, 0),
+(2, 'usr2', '123456789', 1, 'LEVJ810924HZSXLS05', '', 0, 0),
+(3, 'usr3', '123456789', 1, 'LEVJ810924HZSXLS06', '', 0, 0),
+(4, 'admin', '123456789', 2, 'LEVJ', '', 0, 0),
+(5, 'admin2', '123456789', 2, NULL, '', 0, 0),
+(6, 'califica1', '123456789', 3, NULL, '', 0, 0),
+(7, 'califica2', '123456789', 3, NULL, '', 0, 0),
+(8, 'califica3', '123456789', 3, NULL, '', 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -145,12 +144,6 @@ ALTER TABLE `calificacion`
 -- Indices de la tabla `catalogo_documentos`
 --
 ALTER TABLE `catalogo_documentos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `datos`
---
-ALTER TABLE `datos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -174,26 +167,26 @@ ALTER TABLE `usr`
 --
 ALTER TABLE `calificacion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `catalogo_documentos`
 --
 ALTER TABLE `catalogo_documentos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT de la tabla `datos`
---
-ALTER TABLE `datos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
