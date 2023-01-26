@@ -172,7 +172,7 @@ $perfil = $_SESSION['perfil'];
               <p class="card-text">Debes tener a la mano los datos personales como: Nombre, Apellido(s), Domicilio, CURP, Municipio, Escolaridad, etcétera. Para poder llenar los documentos, debes completar de manera inicial esta sección</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modalVisualizar" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
               <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar</a>
             </div>
           </div>
@@ -234,10 +234,8 @@ $perfil = $_SESSION['perfil'];
   </div>
 </footer>
 
-
     <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      
   </body>
 </html>
 
@@ -252,3 +250,8 @@ $perfil = $_SESSION['perfil'];
     } /* speed */ );
 });
 </script>
+
+<!-- modal datos visualizar -->
+<?php 
+  include('query/visualizar_datos.php');
+?>
