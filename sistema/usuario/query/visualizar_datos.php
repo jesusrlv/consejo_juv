@@ -19,24 +19,57 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-person-circle"></i> Datos personales</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-
-                <div class="alert alert-secondary" role="alert">
-                    <strong>Nombre: </strong>'.$rowVisualizar['nombre'].'
+            <div class="modal-body align-items-center">
+                <div class="input-group mb-1">
+                    <div class="alert alert-light border text-center" role="alert">
+                        <i class="bi bi-person-circle h5"></i>
+                    </div>
+                    <div class="alert alert-secondary w-75" role="alert">
+                            <strong>Nombre: </strong>'.$rowVisualizar['nombre'].'
+                    </div>
                 </div>
-                <div class="alert alert-secondary" role="alert">
-                    <strong>Usuario: </strong>'.$rowVisualizar['usr'].'
+                <div class="input-group mb-1">
+                    <div class="alert alert-light border text-center" role="alert">
+                        <i class="bi bi-person-circle h5"></i>
+                    </div>
+                    <div class="alert alert-secondary w-75" role="alert">
+                            <strong>Usuario: </strong>'.$rowVisualizar['usr'].'
+                    </div>
                 </div>
-                <div class="alert alert-secondary" role="alert">
-                    <strong>CURP: </strong>'.$rowVisualizar['curp'].'
+                <div class="input-group mb-1">
+                    <div class="alert alert-light border text-center" role="alert">
+                        <i class="bi bi-person-circle h5"></i>
+                    </div>
+                    <div class="alert alert-secondary w-75" role="alert">
+                            <strong>Nombre: </strong>'.$rowVisualizar['curp'].'
+                    </div>
                 </div>
-                <div class="alert alert-secondary" role="alert">
-                    <strong>Edad: </strong>'.$rowVisualizar['edad'].'
+                <div class="input-group mb-1">
+                    <div class="alert alert-light border text-center" role="alert">
+                        <i class="bi bi-person-circle h5"></i>
+                    </div>
+                    <div class="alert alert-secondary w-75" role="alert">
+                            <strong>Nombre: </strong>'.$rowVisualizar['edad'].'
+                    </div>
                 </div>
-                <div class="alert alert-secondary" role="alert">
-                    <strong>Municipio: </strong>'.$rowMunicipio['municipio'].'
+                <div class="input-group mb-1">
+                    <div class="alert alert-light border text-center" role="alert">
+                        <i class="bi bi-person-circle h5"></i>
+                    </div>
+                    <div class="alert alert-secondary w-75" role="alert">
+                            <strong>Nombre: </strong>'.$rowMunicipio['municipio'].'
+                    </div>
                 </div>
-
+                <div class="input-group mb-1">
+                    <div class="alert alert-light border text-center" role="alert">
+                        <i class="bi bi-person-circle h5"></i>
+                    </div>
+                    <div class="alert alert-secondary w-75" role="alert">
+                            <strong>Nombre: </strong>'.$rowVisualizar['nombre'].'
+                    </div>
+                </div>
+                    
+                        
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
