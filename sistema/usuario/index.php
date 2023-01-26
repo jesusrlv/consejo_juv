@@ -173,7 +173,7 @@ $perfil = $_SESSION['perfil'];
             </div>
             <div class="card-footer">
               <a href="#" data-bs-toggle="modal" data-bs-target="#modalVisualizar" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
-              <a href="#" class="card-link" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar</a>
+              <a href="#" class="card-link" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="bi bi-pencil-square"></i> Editar</a>
             </div>
           </div>
         </div>
@@ -254,4 +254,6 @@ $perfil = $_SESSION['perfil'];
 <!-- modal datos visualizar -->
 <?php 
   include('query/visualizar_datos.php');
+  include('prcd/editar_datos.php');
+
 ?>
