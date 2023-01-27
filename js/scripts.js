@@ -210,3 +210,12 @@ $(document).ready(function() {
        });
      });
 });
+
+function loaded() {
+    $.ajax({
+        url: "sistema/usuario/query/municipios.php",
+        success: function(data) {
+            $('#municipio').html(data);
+        }
+    });
+}

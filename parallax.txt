@@ -11,3 +11,6 @@ https://codepen.io/jakob-e/pen/ELqeRM
 Para efectos de cards y diseño
 https://ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers
 https://codepen.io/Corsurath/pen/abbxNpj
+
+Cómo funciona ajax
+https://www.ediciones-eni.com/open/mediabook.aspx?idR=ac361f71f3edf4794614f9be6b0a6b8d
