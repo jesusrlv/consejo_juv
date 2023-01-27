@@ -7,3 +7,7 @@ https://www.w3schools.com/howto/tryhow_css_parallax_demo.htm
 
 para convocatorias
 https://codepen.io/jakob-e/pen/ELqeRM
+
+Para efectos de cards y diseño
+https://ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers
+https://codepen.io/Corsurath/pen/abbxNpj

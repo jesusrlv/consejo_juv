@@ -151,8 +151,11 @@ $(document).ready(function() {
                     // location.href = 'my_profile.php';
                     Swal.fire({
                         icon: 'success',
+                        imageUrl: 'img/logo_consejo_04.png',
+                        imageHeight: 200,
                         title: 'Usuario correcto',
                         text: 'Credenciales correctas',
+                        confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
                     }).then(function(){window.location='sistema/usuario/index.php';});
                 }
@@ -161,6 +164,8 @@ $(document).ready(function() {
                     // location.href = 'my_profile.php';
                     Swal.fire({
                         icon: 'success',
+                        imageUrl: 'img/logo_consejo_04.png',
+                        imageHeight: 200,
                         title: 'Usuario Admin correcto',
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD'
@@ -171,6 +176,8 @@ $(document).ready(function() {
                     // location.href = 'my_profile.php';
                     Swal.fire({
                         icon: 'success',
+                        imageUrl: 'img/logo_consejo_04.png',
+                        imageHeight: 200,
                         title: 'Usuario Jurado correcto',
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD'
@@ -181,6 +188,8 @@ $(document).ready(function() {
                     // location.href = 'my_profile.php';
                     Swal.fire({
                         icon: 'success',
+                        imageUrl: 'img/logo_consejo_04.png',
+                        imageHeight: 200,
                         title: 'Usuario Migrtante correcto',
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD'
