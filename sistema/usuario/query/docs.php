@@ -21,7 +21,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
     ';
         if($no_resultados == 0 || empty($no_resultados)){
             echo '
-        <div class="card border-danger text-light" style="height:300px; background-color:rgba(250, 6, 22, 0.7);">
+        <div class="card border-danger text-light" style="height:300px; background-color:rgba(250, 6, 22, 0.7);" id="botonesFiles">
         ';
         }
         // else if($no_resultados > 0 && $no_resultados <= $no_resultados_warning){
@@ -37,9 +37,12 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
           echo'
             
             <div class="card-body text-justify">
+            
             <h5 class="card-title"><i class="bi bi-filetype-pdf"></i> '.$rowQuery['documento'].'</h5>
+            <p>
               <small class="card-text text-justify">'.$rowQuery['descripcion'].'</small>
-              
+            </p>
+              <p class="text-center h1 h-50"><i class="bi bi-filetype-pdf"></i></p>
             </div>
             <div class="card-footer">
             ';

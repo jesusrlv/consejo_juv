@@ -90,6 +90,31 @@ $perfil = $_SESSION['perfil'];
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      /* buttons hover */
+
+      /* #botonesFiles:hover {
+    
+        box-shadow: 0 10px 20px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.06);
+        transform: scale(1.03);
+        transition: width 0.8s, height 0.8s, transform 0.3s;
+        
+      } */
+      .card{
+        box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      }
+      .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+        transition: width 0.8s, height 0.8s, transform 0.3s;
+      }
+     
+      /* CELULAR */
+      @media screen and (max-width: 600px) {
+        .card:active{
+          transform: scale(1.03);
+          transition: width 0.3s, height 0.3s, transform 0.3s;
+        }
+      }
     </style>
 
     
@@ -165,11 +190,11 @@ $perfil = $_SESSION['perfil'];
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         
         <div class="col">
-          <div class="card border-primary" style="height:300px">
+          <div class="card border-light" style="height:300px">
             <div class="card-body">
               <h5 class="card-title">Datos del usuario</h5>
               <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-circle text-danger"></i> Obligatoria</h6>
-              <p class="card-text">Debes tener a la mano los datos personales como: Nombre, Apellido(s), Domicilio, CURP, Municipio, Escolaridad, etcétera. Para poder llenar los documentos, debes completar de manera inicial esta sección</p>
+              <p class="card-text">Nombre, Apellido(s), Domicilio, CURP, Municipio, Escolaridad, etcétera. Para poder llenar los documentos, debes completar de manera inicial esta sección</p>
             </div>
             <div class="card-footer">
               <a href="#" data-bs-toggle="modal" data-bs-target="#modalVisualizar" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
@@ -179,7 +204,7 @@ $perfil = $_SESSION['perfil'];
         </div>
 
         <div class="col">
-          <div class="card border-primary" style="height:300px">
+          <div class="card border-light" style="height:300px">
             <div class="card-body">
               <h5 class="card-title">Convocatoria</h5>
               <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-triangle-fill text-warning"></i> Convocatoria vigente</h6>
@@ -192,15 +217,6 @@ $perfil = $_SESSION['perfil'];
           </div>
         </div>
         <? include('query/docs_contador.php'); ?>
-        <!-- <div class="col">
-          <div class="card border-primary" style="height:300px">
-            <div class="card-body">
-              <p><h5 class="card-title">Estatus del perfil</h5></p>
-              <p><h6 class="card-subtitle mb-2 text-muted">Documentos cargados en el sistema</h6></p>
-                <p class="card-text text-center display-1">0</p>
-            </div>
-          </div>
-        </div> -->
         
       </div><!-- row -->
     </div>
@@ -255,5 +271,4 @@ $perfil = $_SESSION['perfil'];
 <?php 
   include('query/visualizar_datos.php');
   include('prcd/editar_datos.php');
-
 ?>
