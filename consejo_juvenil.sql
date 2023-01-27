@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-01-2023 a las 23:34:46
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.28
+-- Tiempo de generación: 27-01-2023 a las 06:33:14
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -53,7 +52,7 @@ CREATE TABLE `catalogo_documentos` (
 
 INSERT INTO `catalogo_documentos` (`id`, `documento`, `subtitulo`, `descripcion`, `link`) VALUES
 (1, 'Carta exposición de motivos ', 'Carta exposición de motivos ', 'Carta exposición de motivos dirigida al Titular del Instituto de la Juventud, en la cual se expresen las razones por las cuales tiene interés en postularse como integrante del Consejo Juvenil del Estado de Zacatecas', '0'),
-(2, 'Documento que acredite OSC', 'Documento que acredite OSC', 'Documento que acredite que pertenece a alguna Organización de la Sociedad Civil, que tenga relación con el desarrollo de las y los jóvenes; Titular de Instancia Municipal en alguno de los 58 Municipios; o inscrito (a) en alguna Institución Educativa ya sea de Nivel Medio Superior o Superior', '0'),
+(2, 'Documento que acredite OSC', 'Documento que acredite OSC', 'Documento acredite pertenecer a Organización de la Sociedad Civil que tenga relación con el desarrollo de la juventud; Titular de Instancia Municipal; inscrito (a) en Institución Educativa Nivel Medio Superior o Superior', '0'),
 (3, 'Copia simple del acta de Nacimiento', 'Copia simple del acta de Nacimiento', 'Copia simple del acta de Nacimiento', '0'),
 (4, 'Copia simple de credencial de elector', 'Copia simple de credencial de elector', 'Copia simple de credencial de elector; en caso de ser menor de edad debe presentar copia del padre de familia o tutor', '0'),
 (5, 'Copia simple de la CURP', 'Copia simple de la CURP', 'Copia simple de la CURP', '0'),
@@ -248,32 +247,26 @@ ALTER TABLE `usr`
 --
 ALTER TABLE `calificacion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `catalogo_documentos`
 --
 ALTER TABLE `catalogo_documentos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT de la tabla `documentos`
 --
 ALTER TABLE `documentos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
 --
 -- AUTO_INCREMENT de la tabla `municipio`
 --
 ALTER TABLE `municipio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
-
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
