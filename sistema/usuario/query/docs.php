@@ -1,5 +1,4 @@
 <?php
-
 include('qc.php');
 
 $sqlQuery = "SELECT * FROM catalogo_documentos ORDER BY id ASC";

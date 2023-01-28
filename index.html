@@ -140,7 +140,7 @@
             <div class="form-group">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
-                    <input type="text" class="form-control" placeholder="Usuario (CURP)" aria-label="Usuario (CURP)" aria-describedby="basic-addon1" name="usr" required>
+                    <input type="text" class="form-control" placeholder="Usuario (email)" aria-label="Usuario (CURP)" aria-describedby="basic-addon1" name="usr" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-fingerprint"></i></span>
@@ -191,21 +191,21 @@
         <form action="" id="registroMX">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
-          <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" id="nombre">
+          <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" id="nombre" required>
         </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"><i class="bi bi-card-list"></i></span>
-          <input type="text" class="form-control" placeholder="Domicilio" aria-label="Domicilio" aria-describedby="basic-addon1" id="domicilio">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-telephone-forward-fill"></i></span>
+          <input type="text" class="form-control" placeholder="Teléfono" aria-label="Teléfono" aria-describedby="basic-addon1" id="telefono" required>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-globe-americas"></i></span>
           <!-- <input type="text" class="form-control" placeholder="Municiìo" aria-label="Municipio" aria-describedby="basic-addon1"> -->
-          <select class="form-control" aria-label="Default select example" id="municipio">
+          <select class="form-control" aria-label="Default select example" id="municipio" required>
           </select>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-braces-asterisk"></i></span>
-          <input type="text" class="form-control" placeholder="CURP" aria-label="CURP" id="curp" oninput="curp2date(this)" aria-describedby="basic-addon1" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this);">
+          <input type="text" class="form-control" placeholder="CURP" aria-label="CURP" id="curp" oninput="curp2date(this)" aria-describedby="basic-addon1" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this);" required>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
@@ -214,11 +214,11 @@
         <p><span class="text-dark">Datos de acceso</span></p>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-fill"></i></span>
-          <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="basic-addon1" id="email">
+          <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="basic-addon1" id="email" required>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-question-lg"></i></span>
-          <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1"  id="pwd">
+          <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1"  id="pwd" required>
         </div>
         <p><span class="text-dark">Verificación</span>
             <div id="result-username" class="mb-0 g-0" style="margin-bottom:-3px">
@@ -234,7 +234,7 @@
       </div>
       <div class="modal-footer bg-light">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
-        <button type="submit" class="btn btn-outline-primary" id="boton_submit"><i class="bi bi-plus-circle-fill"></i> Registrarse</button>
+        <button type="submit" class="btn btn-outline-primary" id="boton_submit" hidden><i class="bi bi-plus-circle-fill"></i> Registrarse</button>
       </form>
       </div>
     </div>

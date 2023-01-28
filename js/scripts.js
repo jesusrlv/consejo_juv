@@ -63,8 +63,10 @@
             if (curpValida(curp)) {
                 valido = "Válido";
                 resultado.innerHTML ='<div class="alert alert-success text-start"><strong><i class="bi bi-check-square"></i> CORRECTO. </strong> Cadena CURP correcta.</div>';
+                document.getElementById('boton_submit').hidden = false;
             } else {
                 resultado.innerHTML = '<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena CURP incorrecta.</div><style>#boton_submit{display:none;}</style>';
+                document.getElementById('boton_submit').hidden = true;
             }
                 
         }
@@ -138,10 +140,12 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: 'prcd/login.php',
+            dataType:'json',
             data: $(this).serialize(),
             success: function(response)
             {
-                var jsonData = JSON.parse(response);
+                // var jsonData = JSON.parse(response);
+                var jsonData = JSON.parse(JSON.stringify(response));
  
                 // user is logged in successfully in the back-end
                 // let's redirect
@@ -211,16 +215,33 @@ $(document).ready(function() {
 });
 // REGISTRO DE USUARIOS MX
 $(document).ready(function() {
-    $('#registroMX').submit(function(e) {
+    $('#boton_submit').click(function(e) {
+        var nombre = document.getElementById('nombre').value;
+        var municipio = document.getElementById('municipio').value;
+        var curp = document.getElementById('curp').value;
+        var edad = document.getElementById('edad').value;
+        var email = document.getElementById('email').value;
+        var pwd = document.getElementById('pwd').value;
+        var telefono = document.getElementById('telefono').value;
         e.preventDefault();
         $.ajax({
             type: "POST",
             url: 'prcd/registro.php',
-            data: $(this).serialize(),
+            dataType:'json',
+            // data: $(this).serialize(),
+            data:{
+                nombre:nombre,
+                municipio:municipio,
+                curp:curp,
+                edad:edad,
+                email:email,
+                pwd:pwd,
+                telefono:telefono
+            },
             success: function(response)
             {
-                var jsonData = JSON.parse(response);
- 
+                // var jsonData = JSON.parse(response);
+                var jsonData = JSON.parse(JSON.stringify(response));
                 // user is logged in successfully in the back-end
                 // let's redirect
                 if (jsonData.success == "1")
@@ -234,7 +255,7 @@ $(document).ready(function() {
                         text: 'Bienvenido(a) al Sistema de Postulación',
                         confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
-                    }).then(function(){window.location='sistema/usuario/index.php';});
+                    }).then(function(){window.location='index.html';});
                 }
                 else
                 {

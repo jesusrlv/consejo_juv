@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-01-2023 a las 20:10:57
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.28
+-- Tiempo de generación: 28-01-2023 a las 08:57:20
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -44,24 +43,23 @@ CREATE TABLE `catalogo_documentos` (
   `documento` varchar(50) NOT NULL,
   `subtitulo` varchar(50) NOT NULL,
   `descripcion` varchar(300) NOT NULL,
-  `link` varchar(200) DEFAULT NULL,
-  `calificable` int(11) NOT NULL
+  `link` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `catalogo_documentos`
 --
 
-INSERT INTO `catalogo_documentos` (`id`, `documento`, `subtitulo`, `descripcion`, `link`, `calificable`) VALUES
-(1, 'Carta exposición de motivos ', 'Carta exposición de motivos ', 'Carta exposición de motivos dirigida al Titular del Instituto de la Juventud, en la cual se expresen las razones por las cuales tiene interés en postularse como integrante del Consejo Juvenil del Estado de Zacatecas', '0', 0),
-(2, 'Documento que acredite OSC', 'Documento que acredite OSC', 'Documento que acredite que pertenece a alguna Organización de la Sociedad Civil, que tenga relación con el desarrollo de las y los jóvenes; Titular de Instancia Municipal en alguno de los 58 Municipios; o inscrito (a) en alguna Institución Educativa ya sea de Nivel Medio Superior o Superior', '0', 0),
-(3, 'Copia simple del acta de Nacimiento', 'Copia simple del acta de Nacimiento', 'Copia simple del acta de Nacimiento', '0', 0),
-(4, 'Copia simple de credencial de elector', 'Copia simple de credencial de elector', 'Copia simple de credencial de elector; en caso de ser menor de edad debe presentar copia del padre de familia o tutor', '0', 0),
-(5, 'Copia simple de la CURP', 'Copia simple de la CURP', 'Copia simple de la CURP', '0', 0),
-(6, 'Copia simple de comprobante de domicilio', 'Copia simple de comprobante de domicilio', 'Copia simple de comprobante de domicilio', '0', 0),
-(7, 'Carta de no antecedentes penales', 'Carta de no antecedentes penales', 'Carta en la cual manifieste bajo protesta de decir verdad, no estar sujeto a algún proceso penal, o haber sido sentenciado por delitos graves', '0', 0),
-(8, 'Carta en la cual manifieste de decir verdad', 'Carta en la cual manifieste de decir verdad', 'Carta en la cual manifieste bajo protesta de decir verdad, no encontrarse desempeñando algún cargo de elección popular', '0', 0),
-(9, 'Currículum vitae actualizado', 'Currículum vitae actualizado', 'Currículum vitae actualizado', '0', 0);
+INSERT INTO `catalogo_documentos` (`id`, `documento`, `subtitulo`, `descripcion`, `link`) VALUES
+(1, 'Carta exposición de motivos ', 'Carta exposición de motivos ', 'Carta exposición de motivos dirigida al Titular del Instituto de la Juventud, en la cual se expresen las razones por las cuales tiene interés en postularse como integrante del Consejo Juvenil del Estado de Zacatecas', '0'),
+(2, 'Documento que acredite OSC', 'Documento que acredite OSC', 'Documento acredite pertenecer a Organización de la Sociedad Civil que tenga relación con el desarrollo de la juventud; Titular de Instancia Municipal; inscrito (a) en Institución Educativa Nivel Medio Superior o Superior', '0'),
+(3, 'Copia simple del acta de Nacimiento', 'Copia simple del acta de Nacimiento', 'Copia simple del acta de Nacimiento', '0'),
+(4, 'Copia simple de credencial de elector', 'Copia simple de credencial de elector', 'Copia simple de credencial de elector; en caso de ser menor de edad debe presentar copia del padre de familia o tutor', '0'),
+(5, 'Copia simple de la CURP', 'Copia simple de la CURP', 'Copia simple de la CURP', '0'),
+(6, 'Copia simple de comprobante de domicilio', 'Copia simple de comprobante de domicilio', 'Copia simple de comprobante de domicilio', '0'),
+(7, 'Carta de no antecedentes penales', 'Carta de no antecedentes penales', 'Carta en la cual manifieste bajo protesta de decir verdad, no estar sujeto a algún proceso penal, o haber sido sentenciado por delitos graves', '0'),
+(8, 'Carta en la cual manifieste de decir verdad', 'Carta en la cual manifieste de decir verdad', 'Carta en la cual manifieste bajo protesta de decir verdad, no encontrarse desempeñando algún cargo de elección popular', '0'),
+(9, 'Currículum vitae actualizado', 'Currículum vitae actualizado', 'Currículum vitae actualizado', '0');
 
 -- --------------------------------------------------------
 
@@ -189,22 +187,25 @@ CREATE TABLE `usr` (
   `curp` varchar(18) DEFAULT NULL,
   `nombre` varchar(100) NOT NULL,
   `edad` int(11) NOT NULL,
-  `municipio` int(11) NOT NULL
+  `municipio` int(11) NOT NULL,
+  `telefono` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usr`
 --
 
-INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`, `curp`, `nombre`, `edad`, `municipio`) VALUES
-(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04', '', 0, 0),
-(2, 'usr2', '123456789', 1, 'LEVJ810924HZSXLS05', '', 0, 0),
-(3, 'usr3', '123456789', 1, 'LEVJ810924HZSXLS06', 'Jesus R', 45, 4),
-(4, 'admin', '123456789', 2, 'LEVJ', '', 0, 0),
-(5, 'admin2', '123456789', 2, NULL, '', 0, 0),
-(6, 'califica1', '123456789', 3, NULL, '', 0, 0),
-(7, 'califica2', '123456789', 3, NULL, '', 0, 0),
-(8, 'califica3', '123456789', 3, NULL, '', 0, 0);
+INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`, `curp`, `nombre`, `edad`, `municipio`, `telefono`) VALUES
+(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04', '', 0, 0, 0),
+(2, 'usr2', '123456789', 1, 'LEVJ810924HZSXLS05', '', 0, 0, 0),
+(3, 'usr3', '123456789', 1, 'LEVJ810924HZSXLS06', 'Jesus R', 45, 4, 0),
+(4, 'admin', '123456789', 2, 'LEVJ', '', 0, 0, 0),
+(5, 'admin2', '123456789', 2, NULL, '', 0, 0, 0),
+(6, 'califica1', '123456789', 3, NULL, '', 0, 0, 0),
+(7, 'califica2', '123456789', 3, NULL, '', 0, 0, 0),
+(8, 'califica3', '123456789', 3, NULL, '', 0, 0, 0),
+(9, 'jesusrlvrojo@gmail.com', '123456789', 1, 'DELJ020727HZSLVNA7', 'JesusRLV', 20, 56, 2147483647),
+(12, 'aepbarba@gmail.com', '123456789', 1, 'SAOJ050223MTLLRCA4', 'Ana Elisa', 17, 56, 20);
 
 --
 -- Índices para tablas volcadas
@@ -249,32 +250,26 @@ ALTER TABLE `usr`
 --
 ALTER TABLE `calificacion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `catalogo_documentos`
 --
 ALTER TABLE `catalogo_documentos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT de la tabla `documentos`
 --
 ALTER TABLE `documentos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
 --
 -- AUTO_INCREMENT de la tabla `municipio`
 --
 ALTER TABLE `municipio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
-
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

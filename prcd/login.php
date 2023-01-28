@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../prcd/conn/qc.php');
+require('conn/qc.php');
 if (isset($_POST['usr']) && isset($_POST['pwd'])) {
    
     $id = $_POST['usr'];
@@ -14,6 +14,7 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
             $_SESSION['usr'] = $id;
             $_SESSION['perfil'] = $row_sql['perfil'];
             $_SESSION['id'] = $row_sql['id'];
+            $_SESSION['nombre'] = $row_sql['nombre'];
 
             echo json_encode(array('success' => 1));
         }
@@ -35,6 +36,8 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
 
             $_SESSION['usr'] = $id;
             $_SESSION['perfil'] = $row_sql['perfil'];
+            $_SESSION['id'] = $row_sql['id'];
+            $_SESSION['nombre'] = $row_sql['nombre'];
 
             echo json_encode(array('success' => 4));
         }
