@@ -3,6 +3,14 @@ session_start();
 require('../prcd/conn/qc.php');
 if (isset($_POST['usr']) && isset($_POST['pwd'])) {
    
+    $nombre = $_POST['nombre'];
+    $domicilio = $_POST['domicilio'];
+    $municipio = $_POST['municipio'];
+    $curp = $_POST['curp'];
+    $edad = $_POST['edad'];
+    $email = $_POST['email'];
+    $pwd = $_POST['pwd'];
+
     $id = $_POST['usr'];
     $pwd = $_POST['pwd'];
     $sql = "SELECT * FROM usr WHERE usr = '$id' AND pwd ='$pwd'";
