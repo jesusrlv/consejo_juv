@@ -131,8 +131,7 @@
         });              
     });    
 
-    // LOGIN
-
+// LOGIN
 $(document).ready(function() {
     $('#pwdForm').submit(function(e) {
         e.preventDefault();
@@ -194,6 +193,48 @@ $(document).ready(function() {
                         text: 'Credenciales correctas',
                         footer: 'INJUVENTUD'
                     }).then(function(){window.location='sistema/migrante/index.php';});
+                }
+                else
+                {
+                    // alert('Invalid Credentials!');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Datos incorrectos',
+                        text: 'Credenciales incorrectas',
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='index.html';});
+                    // });
+                }
+           }
+       });
+     });
+});
+// REGISTRO DE USUARIOS MX
+$(document).ready(function() {
+    $('#registroMX').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: 'prcd/registro.php',
+            data: $(this).serialize(),
+            success: function(response)
+            {
+                var jsonData = JSON.parse(response);
+ 
+                // user is logged in successfully in the back-end
+                // let's redirect
+                if (jsonData.success == "1")
+                {
+                    // location.href = 'my_profile.php';
+                    Swal.fire({
+                        icon: 'success',
+                        imageUrl: 'img/logo_consejo_04.png',
+                        imageHeight: 200,
+                        title: 'Registro exitoso',
+                        text: 'Bienvenido(a) al Sistema de Postulación',
+                        confirmButtonColor: '#3085d6',
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='sistema/usuario/index.php';});
                 }
                 else
                 {
