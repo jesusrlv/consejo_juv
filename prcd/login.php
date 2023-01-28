@@ -22,6 +22,8 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
 
             $_SESSION['usr'] = $id;
             $_SESSION['perfil'] = $row_sql['perfil'];
+            $_SESSION['id'] = $row_sql['id'];
+            $_SESSION['nombre'] = $row_sql['nombre'];
 
             echo json_encode(array('success' => 2));
         }
@@ -29,6 +31,8 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
 
             $_SESSION['usr'] = $id;
             $_SESSION['perfil'] = $row_sql['perfil'];
+            $_SESSION['id'] = $row_sql['id'];
+            $_SESSION['nombre'] = $row_sql['nombre'];
 
             echo json_encode(array('success' => 3));
         }

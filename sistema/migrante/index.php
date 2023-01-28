@@ -142,11 +142,11 @@ $perfil = $_SESSION['perfil'];
       </div>
     </div>
   </div> -->
-  <div class="navbar navbar-dark shadow-sm" style="background:#b94c47">
+  <div class="navbar navbar-dark shadow-sm" style="background:#0A9468">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
-        <strong>POSTULANTE | Consejo Juvenil 2023</strong>
+        <strong>MIGRANTE | Consejo Juvenil 2023</strong>
       </a>
       <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
     </div>
