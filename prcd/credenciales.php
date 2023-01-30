@@ -1,42 +1,24 @@
 <?php
 require('conn/qc.php');
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-        require 'email/prcd/email/Exception.php';
-        require 'email/prcd/email/PHPMailer.php';
-        require 'email/prcd/email/SMTP.php';
-// if (isset($_POST['usr']) && isset($_POST['pwd'])) {
-   
-    $nombre = $_POST['nombre'];
-    $telefono = $_POST['telefono'];
-    $municipio = $_POST['municipio'];
-    $curp = $_POST['curp'];
-    $edad = $_POST['edad'];
-    $email = $_POST['email'];
-    $pwd = $_POST['pwd'];
-    $perfil = 1;
+require 'email/prcd/email/Exception.php';
+require 'email/prcd/email/PHPMailer.php';
+require 'email/prcd/email/SMTP.php';
 
-    $sql = "INSERT INTO usr(
-        usr,
-        nombre,
-        telefono,
-        municipio,
-        curp,
-        edad,
-        pwd,
-        perfil)
-        VALUES(
-            '$email',
-            '$nombre',
-            '$telefono',
-            '$municipio',
-            '$curp',
-            '$edad',
-            '$pwd',
-            '$perfil'
-            )
-        ";
+$email = $_POST['email'];
+$sql ="SELECT * FROM usr WHERE usr = '$email'";
+$resultadoSql = $conn -> query($sql);
+$rowSql = $resultadoSql->fetch_assoc();
+$no_resultados = mysqli_num_rows($resultadoSql);
+
+$nombre = $rowSql['nombre'];
+$pwd = $rowSql['pwd'];
+
+// if(!empty($rowSql['email'])){
+if($no_resultados == 1){
+
         // email
         $mail = new PHPMailer(true);
 
@@ -49,7 +31,7 @@ require('conn/qc.php');
         $mail->Host = 'mailc76.carrierzone.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
         $mail->Username = 'injuventud@zacatecas.gob.mx';                     // SMTP username
-        $mail->Password = '';                               // SMTP password
+        $mail->Password = 'A61q%9zev%z!W';                               // SMTP password
         $mail->SMTPSecure = 'SSL';                                  // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to 587 465
         
@@ -77,16 +59,16 @@ require('conn/qc.php');
             echo "
            
             Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }  
-    $resultado_sql = $conn->query($sql);
-    if($resultado_sql){
-        echo json_encode(array('success' => 1));
-        
-    }
-    else{
-        echo json_encode(array('success' => 0));
-        
-    }
-
+        }    
     
-    ?>
+}
+else{
+    echo'
+    <script>
+    alert("No se envió correo");
+    </script>';
+
+}
+
+
+?>
