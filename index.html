@@ -241,6 +241,7 @@
     </div>
   </div>
 </div>
+
 <!-- registro USA -->
 <div class="modal fade" id="registroUSA" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -249,26 +250,27 @@
         <h5 class="modal-title text-black" id="exampleModalLabel"><i class="bi bi-person-plus-fill"></i> Registro USA-MEX</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="">
+      
       <p class="mt-3"><span class="text-dark">Datos personales</span></p>
       <div class="modal-body">
+        <form action="" method="post" id="formUSA">
+
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
-          <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" id="nombreUSA">
+          <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" id="nombreUSA" name="nombreUSa" required>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-card-list"></i></span>
-          <input type="text" class="form-control" placeholder="Teléfono" aria-label="Teléfono" aria-describedby="basic-addon1" id="telefonoUSA">
+          <input type="text" class="form-control" placeholder="Teléfono" aria-label="Teléfono" aria-describedby="basic-addon1" id="telefonoUSA" required>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-braces-asterisk"></i></span>
-          <input type="text" class="form-control" placeholder="Real ID" aria-label="Real ID" id="curpUSA" aria-describedby="basic-addon1" onkeyup="javascript:this.value=this.value.toUpperCase();">
+          <input type="text" class="form-control" placeholder="Real ID" aria-label="Real ID" id="curpUSA" aria-describedby="basic-addon1" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
         </div>
-              
-              
+
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-          <input type="number" class="form-control" placeholder="Edad" aria-label="Edad" aria-describedby="basic-addon1" id="edadUSA" >
+          <input type="number" class="form-control" placeholder="Edad" aria-label="Edad" aria-describedby="basic-addon1" id="edadUSA" required>
         </div>
         <p><span class="text-dark">Datos de acceso</span></p>
         <div class="input-group mb-3">
@@ -288,12 +290,14 @@
       </div>
       <div class="modal-footer bg-light">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
-        <button type="button" class="btn btn-outline-primary" id="boton_submitUSA"><i class="bi bi-plus-circle-fill"></i> Registrarse</button>
-      </div>
+        <button type="submit" class="btn btn-outline-primary" id="boton_submitUSA" hidden><i class="bi bi-plus-circle-fill"></i> Registrarse</button>
       </form>
+      </div>
+    
     </div>
   </div>
 </div>
+
 <!-- pwd -->
 <div class="modal fade" id="pwdRecuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -313,8 +317,9 @@
       <div class="modal-footer bg-light">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
         <button type="submit" class="btn btn-outline-primary"><i class="bi bi-envelope-check"></i> Recuperar</button>
-      </form>
+      
       </div>
+    </form>
     </div>
   </div>
 </div>

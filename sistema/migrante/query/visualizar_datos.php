@@ -52,14 +52,7 @@
                             <strong>Edad: </strong>'.$rowVisualizar['edad'].'
                     </div>
                 </div>
-                <div class="input-group mb-1">
-                    <div class="alert alert-secondary w-25 border text-center" role="alert">
-                        <i class="bi bi-globe-americas"></i>
-                    </div>
-                    <div class="alert alert-light border w-75" role="alert">
-                            <strong>Municipio: </strong>'.$rowMunicipio['municipio'].'
-                    </div>
-                </div>
+                
                     
             </div>
             <div class="modal-footer">

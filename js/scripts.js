@@ -124,10 +124,11 @@
     
             $.ajax({
                 type: "POST",
-                url: "prcd/verficacion.php",
+                url: "prcd/verficacionUSA.php",
                 data: dataString,
                 success: function(data) {
                     $('#result-username4').fadeIn(1000).html(data);
+                    
                 }
             });
         });              
@@ -216,7 +217,7 @@ $(document).ready(function() {
 
 // REGISTRO DE USUARIOS MX
 $(document).ready(function() {
-    $('#boton_submit').click(function(e) {
+    $('#registroMX').submit(function(e) {
         var nombre = document.getElementById('nombre').value;
         var municipio = document.getElementById('municipio').value;
         var curp = document.getElementById('curp').value;
@@ -276,7 +277,7 @@ $(document).ready(function() {
 
 // REGISTRO DE USUARIOS USA
 $(document).ready(function() {
-    $('#boton_submitUSA').click(function(e) {
+    $('#formUSA').submit(function(e) {
         var nombre = document.getElementById('nombreUSA').value;
         var curp = document.getElementById('curpUSA').value;
         var edad = document.getElementById('edadUSA').value;
@@ -286,12 +287,11 @@ $(document).ready(function() {
         e.preventDefault();
         $.ajax({
             type: "POST",
-            url: 'prcd/registroUSA.php',
+            url: 'prcd/registro_usa.php',
             dataType:'json',
             // data: $(this).serialize(),
             data:{
                 nombre:nombre,
-                municipio:municipio,
                 curp:curp,
                 edad:edad,
                 email:email,
@@ -311,7 +311,7 @@ $(document).ready(function() {
                         icon: 'success',
                         imageUrl: 'img/logo_consejo_04.png',
                         imageHeight: 200,
-                        title: 'Registro exitoso',
+                        title: 'Registro exitoso (Migrante)',
                         text: 'Bienvenido(a) al Sistema de Postulación',
                         confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
