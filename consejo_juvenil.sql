@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-01-2023 a las 08:57:20
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 5.5.38
+-- Tiempo de generación: 30-01-2023 a las 23:29:24
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -96,7 +97,16 @@ INSERT INTO `documentos` (`id`, `documento`, `id_ext`, `link`, `fecha`) VALUES
 (16, 2, 3, 'docs/archivo2_3.pdf', '2023-01-25 16:33:49'),
 (17, 9, 3, 'docs/archivo9_3.pdf', '2023-01-25 16:34:02'),
 (18, 3, 3, 'docs/archivo3_3.pdf', '2023-01-25 16:34:58'),
-(19, 5, 3, 'docs/archivo5_3.pdf', '2023-01-26 10:11:55');
+(19, 5, 3, 'docs/archivo5_3.pdf', '2023-01-26 10:11:55'),
+(20, 1, 16, 'docs/archivo1_16.pdf', '2023-01-30 13:45:00'),
+(21, 8, 16, 'docs/archivo8_16.pdf', '2023-01-30 13:45:48'),
+(22, 3, 16, 'docs/archivo3_16.pdf', '2023-01-30 13:46:06'),
+(23, 4, 16, 'docs/archivo4_16.pdf', '2023-01-30 15:54:37'),
+(24, 6, 16, 'docs/archivo6_16.pdf', '2023-01-30 15:54:59'),
+(25, 5, 16, 'docs/archivo5_16.pdf', '2023-01-30 15:55:08'),
+(26, 9, 16, 'docs/archivo9_16.pdf', '2023-01-30 15:55:14'),
+(27, 2, 16, 'docs/archivo2_16.pdf', '2023-01-30 15:55:22'),
+(28, 7, 16, 'docs/archivo7_16.pdf', '2023-01-30 15:55:30');
 
 -- --------------------------------------------------------
 
@@ -187,7 +197,7 @@ CREATE TABLE `usr` (
   `curp` varchar(18) DEFAULT NULL,
   `nombre` varchar(100) NOT NULL,
   `edad` int(11) NOT NULL,
-  `municipio` int(11) NOT NULL,
+  `municipio` int(11) DEFAULT NULL,
   `telefono` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -196,16 +206,17 @@ CREATE TABLE `usr` (
 --
 
 INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`, `curp`, `nombre`, `edad`, `municipio`, `telefono`) VALUES
-(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04', '', 0, 0, 0),
-(2, 'usr2', '123456789', 1, 'LEVJ810924HZSXLS05', '', 0, 0, 0),
+(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04', '', 0, 1, 0),
+(2, 'usr2', '123456789', 1, 'LEVJ810924HZSXLS05', '', 0, 2, 0),
 (3, 'usr3', '123456789', 1, 'LEVJ810924HZSXLS06', 'Jesus R', 45, 4, 0),
-(4, 'admin', '123456789', 2, 'LEVJ', '', 0, 0, 0),
-(5, 'admin2', '123456789', 2, NULL, '', 0, 0, 0),
-(6, 'califica1', '123456789', 3, NULL, '', 0, 0, 0),
-(7, 'califica2', '123456789', 3, NULL, '', 0, 0, 0),
-(8, 'califica3', '123456789', 3, NULL, '', 0, 0, 0),
+(4, 'admin', '123456789', 2, 'LEVJ', '', 0, 45, 0),
+(5, 'admin2', '123456789', 2, NULL, '', 0, 12, 0),
+(6, 'califica1', '123456789', 3, NULL, '', 0, 10, 0),
+(7, 'califica2', '123456789', 3, NULL, '', 0, 34, 0),
+(8, 'califica3', '123456789', 3, NULL, '', 0, 32, 0),
 (9, 'jesusrlvrojo@gmail.com', '123456789', 1, 'DELJ020727HZSLVNA7', 'JesusRLV', 20, 56, 2147483647),
-(12, 'aepbarba@gmail.com', '123456789', 1, 'SAOJ050223MTLLRCA4', 'Ana Elisa', 17, 56, 20);
+(14, 'jesusrlvrojo@gmail.com', '123456789', 1, 'LOMS031124HZSPRMA2', 'Jesus Rodolfo', 19, 6, 4915000),
+(16, 'DHJSY63HD8@gmail.com', '123456789', 4, 'DHJSY63HD8', 'JesusRLV USA', 23, NULL, 4915000);
 
 --
 -- Índices para tablas volcadas
@@ -250,26 +261,32 @@ ALTER TABLE `usr`
 --
 ALTER TABLE `calificacion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `catalogo_documentos`
 --
 ALTER TABLE `catalogo_documentos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT de la tabla `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
 -- AUTO_INCREMENT de la tabla `municipio`
 --
 ALTER TABLE `municipio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
