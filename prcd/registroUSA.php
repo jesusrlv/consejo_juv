@@ -8,20 +8,18 @@ require('conn/qc.php');
         require 'email/prcd/email/SMTP.php';
 // if (isset($_POST['usr']) && isset($_POST['pwd'])) {
    
-    $nombre = $_POST['nombre'];
-    $telefono = $_POST['telefono'];
-    $municipio = $_POST['municipio'];
-    $curp = $_POST['curp'];
-    $edad = $_POST['edad'];
-    $email = $_POST['email'];
-    $pwd = $_POST['pwd'];
+    $nombre = $_POST['nombreUSA'];
+    $telefono = $_POST['telefonoUSA'];
+    $curp = $_POST['curpUSA'];
+    $edad = $_POST['edadUSA'];
+    $email = $_POST['emailUSA'];
+    $pwd = $_POST['pwdUSA'];
     $perfil = 1;
 
     $sql = "INSERT INTO usr(
         usr,
         nombre,
         telefono,
-        municipio,
         curp,
         edad,
         pwd,
@@ -30,7 +28,6 @@ require('conn/qc.php');
             '$email',
             '$nombre',
             '$telefono',
-            '$municipio',
             '$curp',
             '$edad',
             '$pwd',
@@ -62,7 +59,8 @@ require('conn/qc.php');
             $mail->CharSet = 'UTF-8';                                  // Set email format to HTML
             $mail->Subject = 'Proceso finalizado';
             $mail->Body    = 'Te has registrado a la plataforma del Consejo Juvenil del Estado de Zacatecas.
-            
+            <br>
+            <br>
             Usuario: '.$email.'
             Contraseña: '.$pwd.'
             

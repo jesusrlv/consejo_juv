@@ -213,6 +213,7 @@ $(document).ready(function() {
        });
      });
 });
+
 // REGISTRO DE USUARIOS MX
 $(document).ready(function() {
     $('#boton_submit').click(function(e) {
@@ -227,6 +228,65 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: 'prcd/registro.php',
+            dataType:'json',
+            // data: $(this).serialize(),
+            data:{
+                nombre:nombre,
+                municipio:municipio,
+                curp:curp,
+                edad:edad,
+                email:email,
+                pwd:pwd,
+                telefono:telefono
+            },
+            success: function(response)
+            {
+                // var jsonData = JSON.parse(response);
+                var jsonData = JSON.parse(JSON.stringify(response));
+                // user is logged in successfully in the back-end
+                // let's redirect
+                if (jsonData.success == "1")
+                {
+                    // location.href = 'my_profile.php';
+                    Swal.fire({
+                        icon: 'success',
+                        imageUrl: 'img/logo_consejo_04.png',
+                        imageHeight: 200,
+                        title: 'Registro exitoso',
+                        text: 'Bienvenido(a) al Sistema de Postulación',
+                        confirmButtonColor: '#3085d6',
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='index.html';});
+                }
+                else
+                {
+                    // alert('Invalid Credentials!');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Datos incorrectos',
+                        text: 'Credenciales incorrectas',
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='index.html';});
+                    // });
+                }
+           }
+       });
+     });
+});
+
+// REGISTRO DE USUARIOS USA
+$(document).ready(function() {
+    $('#boton_submitUSA').click(function(e) {
+        var nombre = document.getElementById('nombreUSA').value;
+        var curp = document.getElementById('curpUSA').value;
+        var edad = document.getElementById('edadUSA').value;
+        var email = document.getElementById('emailUSA').value;
+        var pwd = document.getElementById('pwdUSA').value;
+        var telefono = document.getElementById('telefonoUSA').value;
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: 'prcd/registroUSA.php',
             dataType:'json',
             // data: $(this).serialize(),
             data:{
