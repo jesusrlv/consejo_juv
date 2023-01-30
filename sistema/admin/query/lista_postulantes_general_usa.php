@@ -6,8 +6,8 @@ $resultadoSQLUSA = $conn->query($sqlPostulantesUSA);
 $x = 0;
 while($rowSQLUSA = $resultadoSQLUSA->fetch_assoc()){
     $x++;
-    $id = $rowSQLUSA['id'];
-    $contador = "SELECT COUNT(documento) AS contar FROM documentos WHERE id_ext = '$id'";
+    $idDocs = $rowSQLUSA['id'];
+    $contador = "SELECT COUNT(documento) AS contar FROM documentos WHERE id_ext = '$idDocs'";
     $resultadoContar = $conn->query($contador);
     $rowContar = $resultadoContar -> fetch_assoc();
     $numero = $rowContar['contar'];
