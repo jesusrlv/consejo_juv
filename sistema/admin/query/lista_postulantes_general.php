@@ -16,8 +16,15 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
         <td>'.$x.'</td>
         <td>'.$rowSQL['nombre'].'</td>
         <td>'.$rowSQL['curp'].'</td>
-        <td>'.$rowSQL['edad'].'</td>
-        <td>'.$rowSQL['municipio'].'</td>
+        <td>'.$rowSQL['edad'].'</td>';
+        $mun = $rowSQL['municipio'];
+    $sqlMunicipio = "SELECT * FROM municipio WHERE id = '$mun'";
+    $resultadoMunicipio = $conn -> query($sqlMunicipio);
+    $rowMunicipio = $resultadoMunicipio->fetch_assoc();
+    echo'
+        <td>'.$rowMunicipio['municipio'].'</td>
+        ';
+    echo'
         <td>'.$rowSQL['telefono'].'</td>
         <td>'.$numero.'</td>
     </tr>
