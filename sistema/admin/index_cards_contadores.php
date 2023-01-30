@@ -16,7 +16,7 @@ $perfil = $_SESSION['perfil'];
     <meta name="INJUVENTUD" content="Consejo Juvenil">
     <meta name="" content="">
     <link rel="icon" type="image/png" href="../../img/icon.ico" sizes="22x21">
-    <title>Perfil Admin | Consejo Juvenil</title>
+    <title>Perfil Usuario | Consejo Juvenil</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -167,8 +167,8 @@ $perfil = $_SESSION['perfil'];
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
-          <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a>
-          <a href="#seccion_USA" class="btn btn-primary my-2"><i class="bi bi-flag-fill text-danger"></i> Postulantes USA</a>
+          <a href="#seccion_MX" class="btn btn-primary my-2"><i class="bi bi-filetype-pdf"></i> Postulantes Mx</a>
+          <a href="#seccion_USA" class="btn btn-secondary my-2"><i class="bi bi-file-earmark-break"></i> Postulantes USA</a>
         </p>
       </div>
     </div>
@@ -185,29 +185,40 @@ $perfil = $_SESSION['perfil'];
               </a>
           </p>
         </p>
-        <p><small>Postulantes nacidos en <strong>el estado de Zacatecas</strong>.</small></p>
+        <p><small>Información de<strong> datos personales</strong> y acerca de la convocatoria.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <table class="table">
-          <thead class="text-light text-center" style="background:#b23933">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">CURP</th>
-              <th scope="col">Edad</th>
-              <th scope="col">Municipio</th>
-              <th scope="col">Teléfono</th>
-              <th scope="col">Estatus</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <?php
-            include('query/lista_postulantes_general.php');
-            ?>
-          </tbody>
-        </table>
-       
+        
+        <!-- <div class="col">
+          <div class="card border-light" style="height:300px">
+            <div class="card-body">
+              <h5 class="card-title">Datos del usuario</h5>
+              <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-circle text-danger"></i> Obligatoria</h6>
+              <p class="card-text">Nombre, Apellido(s), Domicilio, CURP, Municipio, Escolaridad, etcétera. Para poder llenar los documentos, debes completar de manera inicial esta sección.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modalVisualizar" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
+              <a href="#" class="card-link" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="bi bi-pencil-square"></i> Editar</a>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="col">
+          <div class="card border-light" style="height:300px">
+            <div class="card-body">
+              <h5 class="card-title">Convocatoria</h5>
+              <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-triangle-fill text-warning"></i> Convocatoria vigente</h6>
+              <p class="card-text">Convocatoria vigente acerca de la postulación al Consejo Juvenil 2023.</p>
+              
+            </div>
+            <div class="card-footer">
+              <a href="../../convocatoria/convocatoria_consejo_juvenil_2023.pdf" target="_blank" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
+            </div>
+          </div>
+        </div> -->
+        <? include('query/docs_contador.php'); ?>
+        
       </div><!-- row -->
     </div>
   </div>
@@ -219,29 +230,15 @@ $perfil = $_SESSION['perfil'];
           <p class="h2" >
           <i class="bi bi-flag-fill text-danger"></i> Postulantes USA | 
             <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
-            <p><small>Postulantes Migrantes <strong>de Zacatecas</strong>.</small></p>
+        <p><small>Carga los documentos <strong>(formato PDF)</strong> para poder participar como postulante.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
        
-      <table class="table">
-          <thead class="text-light text-center" style="background:#b23933">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">CURP</th>
-              <th scope="col">Edad</th>
-              <th scope="col">Teléfono</th>
-              <th scope="col">Estatus</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <?php
-            include('query/lista_postulantes_general_usa.php');
-            ?>
-          </tbody>
-        </table>
-     
+        <? 
+        // include('query/docs.php'); 
+        ?>
+        <? include('query/docs_contador.php'); ?>
 
       </div><!-- row -->
     </div>
@@ -277,3 +274,7 @@ $perfil = $_SESSION['perfil'];
 </script>
 
 <!-- modal datos visualizar -->
+<?php 
+  include('query/visualizar_datos.php');
+  include('prcd/editar_datos.php');
+?>
