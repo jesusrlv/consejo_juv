@@ -18,7 +18,7 @@ while($rowSQLUSA = $resultadoSQLUSA->fetch_assoc()){
         <td>'.$rowSQLUSA['curp'].'</td>
         <td>'.$rowSQLUSA['edad'].'</td>
         <td>'.$rowSQLUSA['telefono'].'</td>
-        <td>'.$numero.'</td>
+        <td><a href="listado_docs.php?id='.$rowSQLUSA['id'].'"><span class="badge rounded-pill text-bg-primary">'.$numero.'</span></a></td>
     </tr>
 ';
 }

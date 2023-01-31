@@ -26,7 +26,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
         ';
     echo'
         <td>'.$rowSQL['telefono'].'</td>
-        <td>'.$numero.'</td>
+        <td><a href="listado_docs.php?id='.$rowSQL['id'].'"><span class="badge rounded-pill text-bg-primary">'.$numero.'</span></a></td>
     </tr>
 ';
 }
