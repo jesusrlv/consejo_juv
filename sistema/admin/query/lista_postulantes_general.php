@@ -26,7 +26,28 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
         ';
     echo'
         <td>'.$rowSQL['telefono'].'</td>
-        <td><a href="listado_docs.php?id='.$rowSQL['id'].'"><span class="badge rounded-pill text-bg-primary">'.$numero.'</span></a></td>
+        <td>
+            <a href="listado_docs.php?id='.$rowSQL['id'].'">';
+        if ($numero == 0){
+            echo'
+            <span class="badge rounded-pill text-bg-danger">
+            ';
+        }
+        else if ($numero == 1 || $numero == 2 || $numero == 3 || $numero == 4 || $numero == 5 || $numero == 6 || $numero == 7 || $numero == 8){
+            echo'
+            <span class="badge rounded-pill text-bg-warning">
+            ';
+        }
+        else if ($numero == 9){
+            echo'
+            <span class="badge rounded-pill text-bg-primary">
+            ';
+        }
+            echo'
+                '.$numero.'
+            </span>
+            </a>
+        </td>
     </tr>
 ';
 }

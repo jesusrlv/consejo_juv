@@ -16,7 +16,7 @@ $perfil = $_SESSION['perfil'];
     <meta name="INJUVENTUD" content="Consejo Juvenil">
     <meta name="" content="">
     <link rel="icon" type="image/png" href="../../img/icon.ico" sizes="22x21">
-    <title>Perfil Usuario | Consejo Juvenil</title>
+    <title>Perfil Jurado | Consejo Juvenil</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -124,24 +124,6 @@ $perfil = $_SESSION['perfil'];
     
 <header>
 <span id="inicio"></span>
-  <!-- <div class="collapse bg-primary" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white"><img src="../../img/logo_injuventud_01.png" alt="" width="90"></h4>
-          <p class="text-white">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="navbar navbar-dark shadow-sm" style="background:#6002DE">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
@@ -167,8 +149,8 @@ $perfil = $_SESSION['perfil'];
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
-          <a href="#seccion_documentos" class="btn btn-primary my-2"><i class="bi bi-filetype-pdf"></i> Sección de documentos</a>
-          <a href="#seccion_convocatoria" class="btn btn-secondary my-2"><i class="bi bi-file-earmark-break"></i> Sección convocatoria</a>
+          <a href="#seccion_convocatoria" class="btn btn-primary my-2"><i class="bi bi-clipboard-data-fill"></i> Dashboard</a>
+          <!-- <a href="#seccion_convocatoria" class="btn btn-secondary my-2"><i class="bi bi-file-earmark-break"></i> Sección convocatoria</a> -->
         </p>
       </div>
     </div>
@@ -178,19 +160,19 @@ $perfil = $_SESSION['perfil'];
     <div class="container">
       <div class="mb-4">
         <p><span id="seccion_convocatoria"></span>
-          <p class="h2">
-            <i class="bi bi-file-earmark-break"></i> Sección de convocatoria | 
+          <p class="h2 text-secondary">
+            <i class="bi bi-clipboard-data-fill"></i> Dashboard | 
               <a href="#inicio">
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
           </p>
         </p>
-        <p><small>Información de<strong> datos personales</strong> y acerca de la convocatoria.</small></p>
+        <p><small>Dashboard<strong> postulantes</strong>.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         
-        <div class="col">
+        <!-- <div class="col">
           <div class="card border-light" style="height:300px">
             <div class="card-body">
               <h5 class="card-title">Datos del usuario</h5>
@@ -202,9 +184,9 @@ $perfil = $_SESSION['perfil'];
               <a href="#" class="card-link" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="bi bi-pencil-square"></i> Editar</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col">
+        <!-- <div class="col">
           <div class="card border-light" style="height:300px">
             <div class="card-body">
               <h5 class="card-title">Convocatoria</h5>
@@ -216,7 +198,8 @@ $perfil = $_SESSION['perfil'];
               <a href="../../convocatoria/convocatoria_consejo_juvenil_2023.pdf" target="_blank" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
             </div>
           </div>
-        </div>
+        </div> -->
+        <? include('query/docs_contador.php'); ?>
         <? include('query/docs_contador.php'); ?>
         
       </div><!-- row -->
@@ -226,14 +209,31 @@ $perfil = $_SESSION['perfil'];
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="mb-4">
-        <p><span id="seccion_documentos"></span>
-          <p class="h2" ><i class="bi bi-filetype-pdf"></i> Sección de carga de documentos | <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
-        <p><small>Carga los documentos <strong>(formato PDF)</strong> para poder participar como postulante.</small></p>
+        <p><span id=""></span>
+          <p class="h2 text-secondary" ><i class="bi bi-clipboard-check-fill"></i> Lista de postulantes | <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
+        <p><small>Listado de los <strong>postulantes</strong> al Consejo Juvenil.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
        
-        <? include('query/docs.php'); ?>
+      <table class="table">
+          <thead class="text-light text-center" style="background:#b23933">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">CURP</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Municipio</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col"># Documentos</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <?php
+            include('query/lista_postulantes_general.php');
+            ?>
+          </tbody>
+        </table>
 
       </div><!-- row -->
     </div>
@@ -270,6 +270,6 @@ $perfil = $_SESSION['perfil'];
 
 <!-- modal datos visualizar -->
 <?php 
-  include('query/visualizar_datos.php');
-  include('prcd/editar_datos.php');
+  // include('query/visualizar_datos.php');
+  // include('prcd/editar_datos.php');
 ?>

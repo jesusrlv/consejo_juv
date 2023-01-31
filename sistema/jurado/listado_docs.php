@@ -17,16 +17,19 @@ $idPostulante = $_REQUEST['id'];
     <meta name="INJUVENTUD" content="Consejo Juvenil">
     <meta name="" content="">
     <link rel="icon" type="image/png" href="../../img/icon.ico" sizes="22x21">
-    <title>Perfil Admin | Consejo Juvenil</title>
+    <title>Perfil Jurado | Consejo Juvenil</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
     <script src="../../js/files.js"></script>
+    <script src="../../js/calificaciones.js"></script>
     <!-- <script src="../../js/index.js"></script> -->
 
      <!-- type font -->
@@ -125,13 +128,13 @@ $idPostulante = $_REQUEST['id'];
     
 <header>
 <span id="inicio"></span>
-  <div class="navbar navbar-dark shadow-sm" style="background: #FAD40D">
+  <div class="navbar navbar-dark shadow-sm" style="background:#6002DE">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
-        <strong class="text-dark">ADMINISTRADOR | Consejo Juvenil 2023</strong>
+        <strong>JURADO | Consejo Juvenil 2023</strong>
       </a>
-      <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-dark"><i class="bi bi-door-open"></i> Salir</a>
+      <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
     </div>
   </div>
 </header>
@@ -150,8 +153,8 @@ $idPostulante = $_REQUEST['id'];
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
-          <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a>
-          <a href="#seccion_USA" class="btn btn-primary my-2"><i class="bi bi-flag-fill text-danger"></i> Postulantes USA</a>
+          <a href="#seccion_convocatoria" class="btn btn-primary my-2"><i class="bi bi-clipboard-data-fill"></i> Documentos</a>
+          <a href="index.php" class="btn btn-danger my-2"><i class="bi bi-arrow-bar-left"></i> Regresar Dashboard</a>
         </p>
       </div>
     </div>
@@ -159,26 +162,40 @@ $idPostulante = $_REQUEST['id'];
 
   <div class="album py-5 bg-light">
     <div class="container">
-      <div class="mb-4">
-        <p><span id="seccion_MX"></span>
-          <p class="h2">
-          <i class="bi bi-flag-fill text-success"></i> Postulantes Mx | 
+      <!-- <div class="mb-4">
+        <p><span id="seccion_convocatoria"></span>
+          <p class="h2 text-secondary">
+            <i class="bi bi-clipboard-data-fill"></i> Dashboard | 
               <a href="#inicio">
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
           </p>
         </p>
-        <p><small>Postulantes nacidos en <strong>el estado de Zacatecas</strong>.</small></p>
+        <p><small>Dashboard<strong> postulantes</strong>.</small></p>
+      </div> -->
+      
+      
+    </div>
+  </div>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="mb-4">
+        <p><span id="seccion_convocatoria"></span>
+          <p class="h2 text-secondary" ><i class="bi bi-file-earmark-post-fill"></i> Documentos | <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
+        <p><small>Listado de los <strong>postulantes</strong> al Consejo Juvenil.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <table class="table">
+       
+      <table class="table">
           <thead class="text-light text-center" style="background:#b23933">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Documento</th>
               <th scope="col">Descripción</th>
               <th scope="col">Link</th>
+              <th scope="col">Calificar</th>
               <th scope="col">Calificación</th>
             </tr>
           </thead>
@@ -188,12 +205,10 @@ $idPostulante = $_REQUEST['id'];
             ?>
           </tbody>
         </table>
-       
+
       </div><!-- row -->
     </div>
   </div>
-
-  
 
 </main>
 
@@ -225,3 +240,7 @@ $idPostulante = $_REQUEST['id'];
 </script>
 
 <!-- modal datos visualizar -->
+<?php 
+  // include('query/visualizar_datos.php');
+  // include('prcd/editar_datos.php');
+?>
