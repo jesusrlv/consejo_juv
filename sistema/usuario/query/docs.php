@@ -51,7 +51,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
             }
             else{
                 echo'
-            <a href="#" class="card-link text-light" style="text-decoration: none"><i class="bi bi-pencil-square"></i> Editar documento</a>
+            <a href="#" class="card-link text-light" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#editarDoc'.$rowQuery['id'].'"><i class="bi bi-pencil-square"></i> Editar documento</a>
             <a href="../'.$rowDocs['link'].'" target="_blank" class="card-link text-light" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar documento</a>
             ';
             }
@@ -66,6 +66,31 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
             <div class="modal-content">
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Cargar documento <strong>'.$rowQuery['documento'].'</strong></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload();"></button>
+              </div>
+              <div class="modal-body">
+                <form id="upload_form" enctype="multipart/form-data" method="post">';
+                ?>
+                  <input type="file" name="fileEditar<? echo $idDoc?>" id="fileEditar<? echo $idDoc?>" onchange="uploadFileEditar(<? echo $idDoc ?>,<? echo $id ?>)" accept="application/pdf" class="h6 w-100 mt-3"><br>
+                <?php
+                echo'
+                  <progress id="progressBar'.$idDoc.'" value="0" max="100" style="width:300px;"></progress>
+                  <small id="status'.$idDoc.'"></small>
+                  <p id="loaded_n_total'.$idDoc.'"></p>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="window.location.reload();">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal editar file -->
+        <div class="modal fade" id="editarDoc'.$rowQuery['id'].'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar documento <strong>'.$rowQuery['documento'].'</strong></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload();"></button>
               </div>
               <div class="modal-body">
