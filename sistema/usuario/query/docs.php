@@ -47,12 +47,12 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
             ';
             if($no_resultados == 0 || empty($no_resultados)){
                 echo'
-            <a href="#" class="card-link text-light" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#cargarDoc'.$rowQuery['id'].'"><i class="bi bi-plus-circle"></i> Cargar documento</a>';
+            <a href="#" class="card-link text-light h6" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#cargarDoc'.$rowQuery['id'].'"><i class="bi bi-plus-circle"></i> Cargar documento</a>';
             }
             else{
                 echo'
-            <a href="#" class="card-link text-light" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#editarDoc'.$rowQuery['id'].'"><i class="bi bi-pencil-square"></i> Editar documento</a>
-            <a href="../'.$rowDocs['link'].'" target="_blank" class="card-link text-light" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar documento</a>
+            <a href="#" class="card-link text-light h6" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#editarDoc'.$rowQuery['id'].'"><i class="bi bi-pencil-square"></i> Editar</a>
+            <a href="../'.$rowDocs['link'].'" target="_blank" class="card-link text-light h6" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar</a>
             ';
             }
             echo'
@@ -99,9 +99,9 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
                   <input type="file" name="fileEditar<? echo $idDoc?>" id="fileEditar<? echo $idDoc?>" onchange="uploadFileEditar(<? echo $idDoc ?>,<? echo $id ?>)" accept="application/pdf" class="h6 w-100 mt-3"><br>
                 <?php
                 echo'
-                  <progress id="progressBar'.$idDoc.'" value="0" max="100" style="width:300px;"></progress>
-                  <small id="status'.$idDoc.'"></small>
-                  <p id="loaded_n_total'.$idDoc.'"></p>
+                  <progress id="progressBarEditar'.$idDoc.'" value="0" max="100" style="width:300px;"></progress>
+                  <small id="statusEditar'.$idDoc.'"></small>
+                  <p id="loaded_n_totalEditar'.$idDoc.'"></p>
                 </form>
               </div>
               <div class="modal-footer">

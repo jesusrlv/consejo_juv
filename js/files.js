@@ -68,10 +68,10 @@ function _(el2) {
     formdataEdit.append("documento", documento);
     formdataEdit.append("idUsuario", idUsuario);
     var ajax = new XMLHttpRequest();
-    ajax.upload.addEventListener("progress", progressHandler, false);
-    ajax.addEventListener("load", completeHandler, false);
-    ajax.addEventListener("error", errorHandler, false);
-    ajax.addEventListener("abort", abortHandler, false);
+    ajax.upload.addEventListener("progress", progressHandlerEditar, false);
+    ajax.addEventListener("load", completeHandlerEditar, false);
+    ajax.addEventListener("error", errorHandlerEditar, false);
+    ajax.addEventListener("abort", abortHandlerEditar, false);
     ajax.open("POST", "prcd/edit_file.php"); 
     
     // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
@@ -81,7 +81,7 @@ function _(el2) {
     ajax.send(formdataEdit);
     
 
-    function progressHandler(event) {
+    function progressHandlerEditar(event) {
 
         _("loaded_n_totalEditar"+doc).innerHTML = "Cargado " + event.loaded + " bytes de " + event.total;
         var percent = (event.loaded / event.total) * 100;
@@ -89,18 +89,18 @@ function _(el2) {
         _("statusEditar"+doc).innerHTML = Math.round(percent) + "% subido... espere un momento";
       }
       
-      function completeHandler(event) {
+      function completeHandlerEditar(event) {
         _("statusEditar"+doc).innerHTML = event.target.responseText;
         _("progressBarEditar"+doc).value = 0; //wil clear progress bar after successful upload
-          _("fileEditarEditar"+doc).style.display='none';
+          _("fileEditar"+doc).style.display='none';
           _("progressBarEditar"+doc).style.display='none';
       }
       
-      function errorHandler(event) {
+      function errorHandlerEditar(event) {
         _("statusEditar"+doc).innerHTML = "Fallo en la subida";
       }
       
-      function abortHandler(event) {
+      function abortHandlerEditar(event) {
         _("statusEditar"+doc).innerHTML = "Fallo en la subida";
       }
     

@@ -31,7 +31,7 @@ $extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
     echo "$fileName carga completa";
     
     $ruta = "docs/". $link .'_'. $idUsr .'.'.$extension;
-    $sqlUpdate= "UPDATE documentos SET link='$ruta',fecha='$fecha_sistema' WHERE id_ext='$idUsr'";
+    $sqlUpdate= "UPDATE documentos SET link='$ruta',fecha='$fecha_sistema' WHERE id_ext='$idUsr' AND documento = '$doc'";
     // $sqlInsert= "INSERT INTO documentos (documento,id_ext,link,fecha) 
     // VALUES('$doc','$idUsr','$ruta','$fecha_sistema')";
     $resultado= $conn->query($sqlUpdate);
