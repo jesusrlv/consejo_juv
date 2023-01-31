@@ -37,7 +37,19 @@ if($resultado){
     }).then(function(){window.location='../index.php';});</script>";
         }
 else{
-    echo 'No se registró ningún cambio';
+    echo "
+    <script type=\"text/javascript\">
+    Swal.fire({
+        icon: 'error',
+        imageUrl: '../../../img/logo_consejo_04.png',
+        imageHeight: 200,
+        imageAlt: 'Gobierno del estado de Zacatecas',
+        title: 'No se actualizaron los datos',
+        text: 'Selecciona el municipio para realizar la actualización',
+        confirmButtonColor: '#3085d6',
+        footer: 'INJUVENTUD'
+    }).then(function(){window.location='../index.php';});</script>
+    ";
 }
 
 ?>
