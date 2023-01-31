@@ -208,7 +208,7 @@ $perfil = $_SESSION['perfil'];
           </thead>
           <tbody class="text-center">
             <?php
-            include('query/lista_postulantes_generals_docs_check..php');
+            include('query/lista_postulantes_docs_check.php');
             ?>
           </tbody>
         </table>
