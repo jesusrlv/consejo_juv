@@ -9,15 +9,24 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
     $sqlDocumento ="SELECT * FROM catalogo_documentos WHERE id ='$doc'";
     $resultadoDocumento = $conn->query($sqlDocumento);
     $rowDocumento = $resultadoDocumento->fetch_assoc();
+
+    $calif = "SELECT * FROM calificaciones WHERE id_ext = '$idPostulante' AND id_jurado = '$id' AND documento = '$doc'";
+    $resultadoCalif = $conn->query($calif);
+    $rowCalif = $resultadoCalif->fetch_assoc();
+
     echo'
     <tr class="align-middle">
         <td>'.$x.'</td>
         <td><strong>'.$rowDocumento['documento'].'</strong></td>
         <td class="text-start">'.$rowDocumento['descripcion'].'</td>
-        <td><a href="../'.$rowDocs['link'].'"><i class="bi bi-filetype-pdf h4"></i></a></td>';
-    if($rowDocs['documento']==1 || $rowDocs['documento']==9){
-        echo'
+        <td><a href="../'.$rowDocs['link'].'"><i class="bi bi-filetype-pdf h4"></i></a></td>
         <td>
+        ';
+    if($rowDocs['documento']==1 || $rowDocs['documento']==9){
+        if(empty($rowDocs['documento'])){
+
+        echo'
+        
             <select class="form-select" aria-label="Default select example" id="calificacion'.$rowDocs['documento'].'" onchange="calificar('.$rowDocs['id_ext'].','.$rowDocs['documento'].','.$_SESSION['id'].')">
                 <option selected value="">...</option>
                 <option value="1">1</option>
@@ -30,7 +39,13 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-            </select>
+            </select>';
+        }else{
+            echo'
+        
+            <span id="editadCalf'.$rowDocs['documento'].'" ><a href="" class="btn btn-primary">Editar</a></span>';
+        }
+        echo'
         </td>
         <td>
             <span id="calificacionActual'.$rowDocs['documento'].'">';

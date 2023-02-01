@@ -14,6 +14,7 @@ function calificar(id,documento,jurado){
             // $('#calificacionActual').fadeIn(1000).html(data);
             document.getElementById('calificacionActual'+documento).innerHTML = calificacion;
             document.getElementById('calificacion'+documento).hidden = true;
+            document.getElementById('editadCalf'+documento).hidden = false;
             Swal.fire({
                 icon: 'success',
                 imageUrl: '../../img/logo_consejo_04.png',
