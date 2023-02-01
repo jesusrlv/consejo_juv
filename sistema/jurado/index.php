@@ -172,33 +172,6 @@ $perfil = $_SESSION['perfil'];
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         
-        <!-- <div class="col">
-          <div class="card border-light" style="height:300px">
-            <div class="card-body">
-              <h5 class="card-title">Datos del usuario</h5>
-              <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-circle text-danger"></i> Obligatoria</h6>
-              <p class="card-text">Nombre, Apellido(s), Domicilio, CURP, Municipio, Escolaridad, etcétera. Para poder llenar los documentos, debes completar de manera inicial esta sección.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" data-bs-toggle="modal" data-bs-target="#modalVisualizar" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
-              <a href="#" class="card-link" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#modalEditar"><i class="bi bi-pencil-square"></i> Editar</a>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="col">
-          <div class="card border-light" style="height:300px">
-            <div class="card-body">
-              <h5 class="card-title">Convocatoria</h5>
-              <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-triangle-fill text-warning"></i> Convocatoria vigente</h6>
-              <p class="card-text">Convocatoria vigente acerca de la postulación al Consejo Juvenil 2023.</p>
-              
-            </div>
-            <div class="card-footer">
-              <a href="../../convocatoria/convocatoria_consejo_juvenil_2023.pdf" target="_blank" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
-            </div>
-          </div>
-        </div> -->
         <? include('query/docs_contador.php'); ?>
         <? include('query/docs_contador.php'); ?>
         
@@ -215,6 +188,12 @@ $perfil = $_SESSION['perfil'];
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput">
+      </div>
+
        
       <table class="table">
           <thead class="text-light text-center" style="background:#b23933">
@@ -228,7 +207,7 @@ $perfil = $_SESSION['perfil'];
               <th scope="col"># Documentos</th>
             </tr>
           </thead>
-          <tbody class="text-center">
+          <tbody class="text-center" id="myTable">
             <?php
             include('query/lista_postulantes_general.php');
             ?>
@@ -266,6 +245,15 @@ $perfil = $_SESSION['perfil'];
         scrollTop: position
     } /* speed */ );
 });
+
+$(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
 </script>
 
 <!-- modal datos visualizar -->
