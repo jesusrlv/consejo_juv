@@ -136,7 +136,6 @@ $perfil = $_SESSION['perfil'];
 </header>
 
 <main>
-
   <section class="text-center container">
     <div class="row py-lg-5"  style="background-image: url('../../assets/img/background.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;width:100%;">
       <div class="col-lg-6 col-md-8 mx-auto rounded bg-light bg-opacity-50 p-2">
@@ -165,7 +164,7 @@ $perfil = $_SESSION['perfil'];
       <div class="mb-4">
         <p><span id="seccion_MX"></span>
           <p class="h2">
-          <i class="bi bi-flag-fill text-success"></i> Postulantes Mx | 
+          <i class="bi bi-flag-fill text-success"></i> Completados Mx | 
               <a href="#inicio">
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
@@ -193,7 +192,7 @@ $perfil = $_SESSION['perfil'];
           </thead>
           <tbody class="text-center" id="myTable">
             <?php
-            include('query/lista_postulantes_general.php');
+            include('query/lista_postulantes_general_no_completados.php');
             ?>
           </tbody>
         </table>
@@ -232,7 +231,7 @@ $perfil = $_SESSION['perfil'];
           </thead>
           <tbody class="text-center" id="myTable2">
             <?php
-            include('query/lista_postulantes_general_usa.php');
+            include('query/lista_postulantes_general_usa_no_completados.php');
             ?>
           </tbody>
         </table>

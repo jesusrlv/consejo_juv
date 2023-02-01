@@ -159,6 +159,12 @@ include('query/name.php');
 
   <div class="album py-5 bg-light">
     <div class="container">
+    <nav class="navbar bg-body-tertiary">
+      <form class="container-fluid justify-content-start">
+        <a href="completados.php" class="btn btn-outline-success me-2" type="button"><i class="bi bi-check-circle-fill"></i> Completados</a>
+        <a href="no_completados.php" class="btn btn-sm btn-outline-danger" type="button"><i class="bi bi-x-circle-fill"></i> No completados</a>
+      </form>
+    </nav>
       <div class="mb-4">
         <p><span id="seccion_MX"></span>
           <p class="h2">
