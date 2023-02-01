@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-01-2023 a las 23:29:24
+-- Tiempo de generación: 01-02-2023 a las 08:38:58
 -- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.28
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `calificacion` (
   `id` int(11) NOT NULL,
+  `id_ext` int(11) NOT NULL,
+  `id_jurado` int(11) NOT NULL,
+  `documento` int(11) NOT NULL,
   `calificacion` int(11) NOT NULL,
-  `id_ext` int(11) NOT NULL
+  `fecha` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `calificacion`
+--
+
+INSERT INTO `calificacion` (`id`, `id_ext`, `id_jurado`, `documento`, `calificacion`, `fecha`) VALUES
+(1, 1, 6, 1, 10, '2023-02-01 01:25:05'),
+(3, 1, 6, 9, 6, '2023-02-01 01:35:22');
 
 -- --------------------------------------------------------
 
@@ -260,7 +271,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `calificacion`
 --
 ALTER TABLE `calificacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `catalogo_documentos`
