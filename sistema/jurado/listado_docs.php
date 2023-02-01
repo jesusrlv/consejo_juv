@@ -6,7 +6,7 @@ $usr = $_SESSION['usr'];
 $nombre = $_SESSION['nombre'];
 $perfil = $_SESSION['perfil'];
 $idPostulante = $_REQUEST['id'];
-
+include('query/name.php');
 ?>
 <!doctype html>
 <html lang="es">
@@ -183,7 +183,7 @@ $idPostulante = $_REQUEST['id'];
       <div class="mb-4">
         <p><span id="seccion_convocatoria"></span>
           <p class="h2 text-secondary" ><i class="bi bi-file-earmark-post-fill"></i> Documentos | <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
-        <p><small>Listado de los <strong>postulantes</strong> al Consejo Juvenil.</small></p>
+        <p><small>POSTULANTE: <strong><? echo $rowName['nombre']?></strong>.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -238,9 +238,3 @@ $idPostulante = $_REQUEST['id'];
     } /* speed */ );
 });
 </script>
-
-<!-- modal datos visualizar -->
-<?php 
-  // include('query/visualizar_datos.php');
-  // include('prcd/editar_datos.php');
-?>
