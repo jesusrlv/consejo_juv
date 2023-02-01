@@ -172,6 +172,7 @@ $(document).ready(function() {
                         imageHeight: 200,
                         title: 'Usuario Admin correcto',
                         text: 'Credenciales correctas',
+                        confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
                     }).then(function(){window.location='sistema/admin/index.php';});
                 }
@@ -184,6 +185,7 @@ $(document).ready(function() {
                         imageHeight: 200,
                         title: 'Usuario Jurado correcto',
                         text: 'Credenciales correctas',
+                        confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
                     }).then(function(){window.location='sistema/jurado/index.php';});
                 }
@@ -196,6 +198,7 @@ $(document).ready(function() {
                         imageHeight: 200,
                         title: 'Usuario Migrtante correcto',
                         text: 'Credenciales correctas',
+                        confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
                     }).then(function(){window.location='sistema/migrante/index.php';});
                 }
@@ -206,6 +209,7 @@ $(document).ready(function() {
                         icon: 'error',
                         title: 'Datos incorrectos',
                         text: 'Credenciales incorrectas',
+                        confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
                     }).then(function(){window.location='index.html';});
                     // });
@@ -266,6 +270,7 @@ $(document).ready(function() {
                         icon: 'error',
                         title: 'Datos incorrectos',
                         text: 'Credenciales incorrectas',
+                        confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
                     }).then(function(){window.location='index.html';});
                     // });
@@ -324,6 +329,7 @@ $(document).ready(function() {
                         icon: 'error',
                         title: 'Datos incorrectos',
                         text: 'Credenciales incorrectas',
+                        confirmButtonColor: '#3085d6',
                         footer: 'INJUVENTUD'
                     }).then(function(){window.location='index.html';});
                     // });
