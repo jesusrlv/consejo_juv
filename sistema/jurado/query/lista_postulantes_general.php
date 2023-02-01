@@ -5,13 +5,14 @@ $sqlPostulantes ="SELECT * FROM usr WHERE perfil = 1 or perfil = 4";
 $resultadoSQL = $conn->query($sqlPostulantes);
 $x = 0;
 while($rowSQL = $resultadoSQL->fetch_assoc()){
-    $x++;
+    
     $idDocs = $rowSQL['id'];
     $contador = "SELECT COUNT(documento) AS contar FROM documentos WHERE id_ext = '$idDocs'";
     $resultadoContar = $conn->query($contador);
     $rowContar = $resultadoContar -> fetch_assoc();
     $numero = $rowContar['contar'];
     if($numero == 9){
+    $x++;
     echo'
     <tr>
         <td>'.$x.'</td>
