@@ -1,4 +1,4 @@
-function calificar(id,documento){
+function calificar(id,documento,jurado){
     var calificacion = document.getElementById('calificacion'+documento).value;
 
     $.ajax({
@@ -7,11 +7,13 @@ function calificar(id,documento){
         data: {
             id:id,
             documento:documento,
-            calificacion:calificacion
+            calificacion:calificacion,
+            jurado:jurado
         },
         success: function(data) {
             // $('#calificacionActual').fadeIn(1000).html(data);
             document.getElementById('calificacionActual'+documento).innerHTML = calificacion;
+            document.getElementById('calificacion'+documento).hidden = true;
             Swal.fire({
                 icon: 'success',
                 imageUrl: '../../img/logo_consejo_04.png',
@@ -23,4 +25,8 @@ function calificar(id,documento){
             });
         }
     });
+}
+
+function editarCalificacion(){
+
 }

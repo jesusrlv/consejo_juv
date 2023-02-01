@@ -18,7 +18,7 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
     if($rowDocs['documento']==1 || $rowDocs['documento']==9){
         echo'
         <td>
-            <select class="form-select" aria-label="Default select example" id="calificacion'.$rowDocs['documento'].'" onchange="calificar('.$rowDocs['id_ext'].','.$rowDocs['documento'].')">
+            <select class="form-select" aria-label="Default select example" id="calificacion'.$rowDocs['documento'].'" onchange="calificar('.$rowDocs['id_ext'].','.$rowDocs['documento'].','.$_SESSION['id'].')">
                 <option selected value="">...</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -33,7 +33,41 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
             </select>
         </td>
         <td>
-            <span id="calificacionActual'.$rowDocs['documento'].'">'.$rowDocs['calificacion'].'</span>
+            <span id="calificacionActual'.$rowDocs['documento'].'">';
+                if($rowDocs['documento']==1){
+                    $idCon = $rowDocs['documento'];
+                    $idExtCon = $rowDocs['id_ext'];
+                    $jurado = $_SESSION['id'];
+                    $docCon = "SELECT * FROM calificacion WHERE documento = 1 AND id_ext = '$idExtCon' AND id_jurado = '$jurado'";
+                    $resultadoCon = $conn->query($docCon);
+                    $rowCon = $resultadoCon->fetch_assoc();
+                    if(empty($rowCon['calificacion'])){
+                        echo 'Sin calificar';
+                    }
+                    else{
+                    echo $rowCon['calificacion'];
+                    }
+
+                }
+                else if($rowDocs['documento']==9){
+                    $idCon = $rowDocs['documento'];
+                    $idExtCon = $rowDocs['id_ext'];
+                    $jurado = $_SESSION['id'];
+                    $docCon = "SELECT * FROM calificacion WHERE documento = 9 AND id_ext = '$idExtCon' AND id_jurado = '$jurado'";
+                    $resultadoCon = $conn->query($docCon);
+                    $rowCon = $resultadoCon->fetch_assoc();
+                    if(empty($rowCon['calificacion'])){
+                        echo 'Sin calificar';
+                    }
+                    else{
+                    echo $rowCon['calificacion'];
+                    }
+                }
+                else{
+                    echo '---';
+                }
+            echo'
+            </span>
         </td>
         ';
     }
