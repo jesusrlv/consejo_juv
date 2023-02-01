@@ -189,6 +189,10 @@ $perfil = $_SESSION['perfil'];
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput">
+      </div>
         <table class="table">
           <thead class="text-light text-center" style="background:#b23933">
             <tr>
@@ -201,7 +205,7 @@ $perfil = $_SESSION['perfil'];
               <th scope="col"># Documentos</th>
             </tr>
           </thead>
-          <tbody class="text-center">
+          <tbody class="text-center" id="myTable">
             <?php
             include('query/lista_postulantes_general.php');
             ?>
@@ -223,6 +227,11 @@ $perfil = $_SESSION['perfil'];
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput2">
+      </div>
        
       <table class="table">
           <thead class="text-light text-center" style="background:#b23933">
@@ -235,7 +244,7 @@ $perfil = $_SESSION['perfil'];
               <th scope="col"># Documentos</th>
             </tr>
           </thead>
-          <tbody class="text-center">
+          <tbody class="text-center" id="myTable2">
             <?php
             include('query/lista_postulantes_general_usa.php');
             ?>
@@ -274,6 +283,23 @@ $perfil = $_SESSION['perfil'];
         scrollTop: position
     } /* speed */ );
 });
+
+$(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+$(document).ready(function () {
+        $("#myInput2").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable2 tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
 </script>
 
 <!-- modal datos visualizar -->
