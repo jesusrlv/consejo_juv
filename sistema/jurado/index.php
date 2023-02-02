@@ -172,8 +172,8 @@ $perfil = $_SESSION['perfil'];
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         
-        <? include('query/docs_contador.php'); ?>
-        <? include('query/docs_contador.php'); ?>
+        <?php include('query/docs_contador.php'); ?>
+        <?php include('query/docs_contador.php'); ?>
         
       </div><!-- row -->
     </div>

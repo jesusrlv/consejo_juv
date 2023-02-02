@@ -71,7 +71,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
               <div class="modal-body">
                 <form id="upload_form" enctype="multipart/form-data" method="post">';
                 ?>
-                  <input type="file" name="file<? echo $idDoc?>" id="file<? echo $idDoc?>" onchange="uploadFile(<? echo $idDoc ?>,<? echo $id ?>)" accept="application/pdf" class="h6 w-100 mt-3"><br>
+                  <input type="file" name="file<?php echo $idDoc?>" id="file<?php echo $idDoc?>" onchange="uploadFile(<?php echo $idDoc ?>,<?php echo $id ?>)" accept="application/pdf" class="h6 w-100 mt-3"><br>
                 <?php
                 echo'
                   <progress id="progressBar'.$idDoc.'" value="0" max="100" style="width:300px;"></progress>
@@ -96,7 +96,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
               <div class="modal-body">
                 <form id="upload_form" enctype="multipart/form-data" method="post">';
                 ?>
-                  <input type="file" name="fileEditar<? echo $idDoc?>" id="fileEditar<? echo $idDoc?>" onchange="uploadFileEditar(<? echo $idDoc ?>,<? echo $id ?>)" accept="application/pdf" class="h6 w-100 mt-3"><br>
+                  <input type="file" name="fileEditar<?php echo $idDoc?>" id="fileEditar<?php echo $idDoc?>" onchange="uploadFileEditar(<?php echo $idDoc ?>,<?php echo $id ?>)" accept="application/pdf" class="h6 w-100 mt-3"><br>
                 <?php
                 echo'
                   <progress id="progressBarEditar'.$idDoc.'" value="0" max="100" style="width:300px;"></progress>

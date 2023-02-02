@@ -145,7 +145,7 @@ $perfil = $_SESSION['perfil'];
         <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
         <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
         <h2 class="fw-bold" style="color:#5a5557"><i class="bi bi-person-circle"></i></h2>
-        <h2 class="fw-bold" style="color:#5a5557"><? echo $nombre ?></h2>
+        <h2 class="fw-bold" style="color:#5a5557"><?php echo $nombre ?></h2>
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
@@ -199,7 +199,7 @@ $perfil = $_SESSION['perfil'];
             </div>
           </div>
         </div>
-        <? include('query/docs_contador.php'); ?>
+        <?php include('query/docs_contador.php'); ?>
         
       </div><!-- row -->
     </div>
@@ -215,7 +215,7 @@ $perfil = $_SESSION['perfil'];
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
        
-        <? include('query/docs.php'); ?>
+        <?php include('query/docs.php'); ?>
 
       </div><!-- row -->
     </div>

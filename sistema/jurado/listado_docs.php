@@ -149,7 +149,7 @@ include('query/name.php');
         <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
         <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
         <h2 class="fw-bold" style="color:#5a5557"><i class="bi bi-person-circle"></i></h2>
-        <h2 class="fw-bold" style="color:#5a5557"><? echo $nombre ?></h2>
+        <h2 class="fw-bold" style="color:#5a5557"><?php echo $nombre ?></h2>
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
@@ -183,7 +183,7 @@ include('query/name.php');
       <div class="mb-4">
         <p><span id="seccion_convocatoria"></span>
           <p class="h2 text-secondary" ><i class="bi bi-file-earmark-post-fill"></i> Documentos | <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
-        <p><small>POSTULANTE: <strong><? echo $rowName['nombre']?></strong>.</small></p>
+        <p><small>POSTULANTE: <strong><?php echo $rowName['nombre']?></strong>.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
