@@ -189,6 +189,7 @@ $perfil = $_SESSION['perfil'];
               <th scope="col">Municipio</th>
               <th scope="col">Teléfono</th>
               <th scope="col"># Documentos</th>
+              <th scope="col">Calificaciones</th>
             </tr>
           </thead>
           <tbody class="text-center" id="myTable">
@@ -228,6 +229,7 @@ $perfil = $_SESSION['perfil'];
               <th scope="col">Edad</th>
               <th scope="col">Teléfono</th>
               <th scope="col"># Documentos</th>
+              <th scope="col">Calificaciones</th>
             </tr>
           </thead>
           <tbody class="text-center" id="myTable2">

@@ -48,6 +48,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
             </span>
             </a>
         </td>
+        <td><a href="calificaciones.php?id='.$rowSQL['id'].'" type="button" class="btn btn-primary btn-sm">Calificaciones</a></td>
     </tr>
 ';
 }
