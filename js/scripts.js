@@ -230,6 +230,31 @@ $(document).ready(function() {
         var email = document.getElementById('email').value;
         var pwd = document.getElementById('pwd').value;
         var telefono = document.getElementById('telefono').value;
+
+        // sweetalert
+        let timerInterval
+        Swal.fire({
+        title: 'Espere un momento',
+        html: 'Sus datos se están registrando en la plataforma.',
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading()
+            const b = Swal.getHtmlContainer().querySelector('b')
+            timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+            }, 100)
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
+        }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+        }
+        })
+        // sweetalert
         e.preventDefault();
         $.ajax({
             type: "POST",
@@ -291,6 +316,30 @@ $(document).ready(function() {
         var email = document.getElementById('emailUSA').value;
         var pwd = document.getElementById('pwdUSA').value;
         var telefono = document.getElementById('telefonoUSA').value;
+         // sweetalert
+         let timerInterval
+         Swal.fire({
+         title: 'Espere un momento',
+         html: 'Sus datos se están registrando en la plataforma.',
+         timer: 2500,
+         timerProgressBar: true,
+         didOpen: () => {
+             Swal.showLoading()
+             const b = Swal.getHtmlContainer().querySelector('b')
+             timerInterval = setInterval(() => {
+             b.textContent = Swal.getTimerLeft()
+             }, 100)
+         },
+         willClose: () => {
+             clearInterval(timerInterval)
+         }
+         }).then((result) => {
+         /* Read more about handling dismissals below */
+         if (result.dismiss === Swal.DismissReason.timer) {
+             console.log('I was closed by the timer')
+         }
+         })
+         // sweetalert
         e.preventDefault();
         $.ajax({
             type: "POST",

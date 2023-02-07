@@ -43,14 +43,13 @@ if($no_resultados == 1){
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';                                  // Set email format to HTML
             $mail->Subject = 'Recuperar credenciales';
-            $mail->Body    = 'El presente correo es para recuperar tus credenciales de acceso al sistema del Consejo Juvenil del Estado de Zacatecas.
+            $mail->Body    = '<p>El presente correo es para recuperar tus credenciales de acceso al sistema del Consejo Juvenil del Estado de Zacatecas.</p>
             
-            Usuario: '.$email.'
-            <br>
-            Contraseña: '.$pwd.'
+            <p>Usuario: '.$email.'</p>
+            <p>Contraseña: '.$pwd.'</p>
             
-            <br><br><b>Atentamente</b>
-            INSTITUTO DE LA JUVENTUD DEL ESTADO DE ZACATECAS';
+            <p><strong>Atentamente</strong></p>
+            <p>INSTITUTO DE LA JUVENTUD DEL ESTADO DE ZACATECAS</p>';
             $mail->AltBody = 'Mensaje registro';
         
             $mail->send();

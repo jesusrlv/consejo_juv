@@ -61,13 +61,13 @@ require('conn/qc.php');
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';                                  // Set email format to HTML
             $mail->Subject = 'Registro exitoso';
-            $mail->Body    = 'Te has registrado a la plataforma del Consejo Juvenil del Estado de Zacatecas.
+            $mail->Body    = '<p>Te has registrado exitosamente a la plataforma del Consejo Juvenil del Estado de Zacatecas.</p>
             
-            Usuario: '.$email.'
-            <br>
-            Contraseña: '.$pwd.'
+            <p><strong>Usuario:</strong> '.$email.'</p>
+           
+            <p><strong>Contraseña:</strong> '.$pwd.'</p>
             
-            <br><br><b>Atentamente</b>
+            <p><strong>Atentamente</strong></p>
             INSTITUTO DE LA JUVENTUD DEL ESTADO DE ZACATECAS';
             $mail->AltBody = 'Mensaje registro';
         
