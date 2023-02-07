@@ -222,6 +222,7 @@ $(document).ready(function() {
 // REGISTRO DE USUARIOS MX
 $(document).ready(function() {
     $('#registroMX').submit(function(e) {
+        document.getElementById('boton_submit').hidden = true;
         var nombre = document.getElementById('nombre').value;
         var municipio = document.getElementById('municipio').value;
         var curp = document.getElementById('curp').value;
@@ -283,6 +284,7 @@ $(document).ready(function() {
 // REGISTRO DE USUARIOS USA
 $(document).ready(function() {
     $('#formUSA').submit(function(e) {
+        document.getElementById('boton_submitUSA').hidden = true;
         var nombre = document.getElementById('nombreUSA').value;
         var curp = document.getElementById('curpUSA').value;
         var edad = document.getElementById('edadUSA').value;
