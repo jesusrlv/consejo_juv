@@ -184,8 +184,9 @@ $idQ = $_REQUEST['id'];
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Calificación Promedio</th>
               <th scope="col">Ver documentos</th>
+              <th scope="col">Calificación Promedio</th>
+
             </tr>
           </thead>
           <tbody class="text-center" id="myTable">
