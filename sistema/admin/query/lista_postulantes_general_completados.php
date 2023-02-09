@@ -45,12 +45,12 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
     $promedio=0;  
     while($rowProm = $resultadoProm->fetch_assoc()){
         $promedio=$promedio+$rowProm['calificacion'];
-        $numero++;
+        $numero = 2;
     }
     $totalPromedio = $promedio / $numero;
     echo'
         <td>
-            '.round($totalPromedio).'
+            '.round($totalPromedio,PHP_ROUND_HALF_DOWN).'
         </td>'; 
 
 
