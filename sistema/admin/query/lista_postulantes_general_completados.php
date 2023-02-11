@@ -1,7 +1,7 @@
 <?php
 include('qc.php');
 // Mx
-$sqlPostulantes ="SELECT * FROM usr WHERE perfil = 1";
+$sqlPostulantes ="SELECT * FROM usr WHERE perfil = 1 AND id = '$idQ'";
 $resultadoSQL = $conn->query($sqlPostulantes);
 $x = 0;
 while($rowSQL = $resultadoSQL->fetch_assoc()){
@@ -40,22 +40,42 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
             </span>
             </a>
         </td>';
-    $calificacionProm = "SELECT * FROM calificacion WHERE id_ext='$idDocs'";
+    // $calificacionProm = "SELECT * FROM calificacion WHERE id_ext='$idDocs'";
+    $calificacionProm = "SELECT AVG(calificacion) as promedio FROM calificacion WHERE id_ext='$idDocs'";
     $resultadoProm = $conn->query($calificacionProm);
-    $promedio=0;  
-    while($rowProm = $resultadoProm->fetch_assoc()){
-        $promedio=$promedio+$rowProm['calificacion'];
+    // $promedio=0;  
+    // while($rowProm = $resultadoProm->fetch_assoc()){
+    $rowProm = $resultadoProm->fetch_assoc();
+        // $promedio=$promedio+$rowProm['calificacion'];
+        $promedio=$rowProm['promedio'];
         $numero = 2;
-    }
-    $totalPromedio = $promedio / $numero;
+    // }
+    // $totalPromedio = $promedio / $numero;
     echo'
         <td>
-            '.round($totalPromedio,PHP_ROUND_HALF_DOWN).'
+            '.round($promedio,PHP_ROUND_HALF_DOWN).'
         </td>'; 
 
 
         echo'
 
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <i class="bi bi-123 me-2"></i> Descripción de calificaciones
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first items accordion body.</div>
+                </div>
+                </div>
+                
+            </div>
+        </td>
     </tr>
 ';
 }
