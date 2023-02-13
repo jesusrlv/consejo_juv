@@ -70,7 +70,22 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
                     </button>
                 </h2>
                 <div id="flush-collapseOne'.$rowSQL['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowSQL['id'].'">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first items accordion body.</div>
+                    <div class="accordion-body text-start   ">
+                        <ul>
+                            <li>';
+                            $califProm = "SELECT * FROM calificacion WHERE id_ext ='$idQ'";
+                            $resultadoProm = $conn->query($califProm);
+                            $rowProm = $resultadoProm->fetch_assoc();
+
+                            $jur = $rowProm['id_jurado'];
+                            $jurado = "SELECT * FROM usr WHERE id = '$jur'";
+                            $resultadoJur = $conn->query($jurado);
+                            $rowJur = $resultadoJur->fetch_assoc();
+                            echo '
+                            <strong>Jurado:</strong> '.$rowJur['nombre'].' <br> <strong>Documento:</strong> '.$rowProm['documento'].' <br> <strong>Calificación:</strong> '.$rowProm['calificacion'].'
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 </div>
                 
