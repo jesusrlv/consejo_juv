@@ -70,21 +70,50 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
                     </button>
                 </h2>
                 <div id="flush-collapseOne'.$rowSQL['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowSQL['id'].'">
-                    <div class="accordion-body text-start   ">
-                        <ul>
-                            <li>';
+                    <div class="accordion-body text-start">
+                    <div class="row">
+                                <div class="col-4 text-center border">
+                                    <strong>Jurado</strong>
+                                </div>
+                                <div class="col-4 text-center border">
+                                    <strong>Documento</strong>
+                                </div>
+                                <div class="col-4 text-center border">
+                                    <strong>Calificación</strong>
+                                </div>
+                            </div>
+                      ';
                             $califProm = "SELECT * FROM calificacion WHERE id_ext ='$idQ'";
                             $resultadoProm = $conn->query($califProm);
-                            $rowProm = $resultadoProm->fetch_assoc();
+                            
+                            while($rowProm = $resultadoProm->fetch_assoc()){
+                            
+                                $documento = $rowProm['documento'];
+                                $doc = "SELECT * FROM catalogo_documentos WHERE '$documento'";
+                                $resultadoDoc = $conn->query($doc);
+                                $rowDoc = $resultadoDoc->fetch_assoc();
 
-                            $jur = $rowProm['id_jurado'];
-                            $jurado = "SELECT * FROM usr WHERE id = '$jur'";
-                            $resultadoJur = $conn->query($jurado);
-                            $rowJur = $resultadoJur->fetch_assoc();
-                            echo '
-                            <strong>Jurado:</strong> '.$rowJur['nombre'].' <br> <strong>Documento:</strong> '.$rowProm['documento'].' <br> <strong>Calificación:</strong> '.$rowProm['calificacion'].'
-                            </li>
-                        </ul>
+                                $jur = $rowProm['id_jurado'];
+                                $jurado = "SELECT * FROM usr WHERE id = '$jur'";
+                                $resultadoJur = $conn->query($jurado);
+                                $rowJur = $resultadoJur->fetch_assoc();
+                                
+                                echo '
+                                <div class="row">
+                                    <div class="col-4 text-center border">
+                                        '.$rowJur['nombre'].'
+                                    </div>
+                                    <div class="col-4 text-center border">
+                                        '.$rowDoc['documento'].'
+                                    </div>
+                                    <div class="col-4 text-center border">
+                                        '.$rowProm['calificacion'].'
+                                    </div>
+                                </div>';
+                            }
+
+                        echo'    
+                        <hr>
                     </div>
                 </div>
                 </div>
