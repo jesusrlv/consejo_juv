@@ -3,7 +3,8 @@ include('qc.php');
 // Mx
 // $sqlPostulantes ="SELECT * FROM usr WHERE perfil = 1";
 // $calificacionProm = "SELECT AVG(calificacion) as promedio FROM calificacion WHERE id_ext='$idDocs'";
-$sqlPostulantes ="SELECT usr.id as id, usr.nombre as nombre, usr.edad as edad, usr.municipio as municipio, usr.telefono as telefono, usr.curp as curp, AVG(calificacion.calificacion) as promedio, calificacion.documento as documento, calificacion.id_jurado as id_jurado, calificacion.calificacion as calificacion FROM usr INNER JOIN calificacion ON usr.id = calificacion.id_ext WHERE usr.perfil = 1 GROUP BY calificacion.calificacion ORDER BY promedio LIMIT 1";
+// $sqlPostulantes ="SELECT usr.id as id, usr.nombre as nombre, usr.edad as edad, usr.municipio as municipio, usr.telefono as telefono, usr.curp as curp, AVG(calificacion.calificacion) as promedio, calificacion.documento as documento, calificacion.id_jurado as id_jurado, calificacion.calificacion as calificacion FROM usr INNER JOIN calificacion ON usr.id = calificacion.id_ext WHERE usr.perfil = 1 GROUP BY calificacion.calificacion ORDER BY promedio LIMIT 1";
+$sqlPostulantes ="SELECT AVG(calificacion.calificacion) as promedio, calificacion.id_ext1 as id FROM calificacion ORDER BY promedio ASC GROUP BY id";
 $resultadoSQL = $conn->query($sqlPostulantes);
 $x = 0;
 while($rowSQL = $resultadoSQL->fetch_assoc()){
