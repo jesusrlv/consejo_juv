@@ -72,14 +72,14 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
                 <div id="flush-collapseOne'.$rowSQL['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowSQL['id'].'">
                     <div class="accordion-body text-start">
                     <div class="row">
-                                <div class="col-4 text-center border">
-                                    <strong>Jurado</strong>
+                                <div class="col-4 text-center border bg-primary">
+                                    <strong class="text-light">Jurado</strong>
                                 </div>
-                                <div class="col-4 text-center border">
-                                    <strong>Documento</strong>
+                                <div class="col-4 text-center border bg-primary">
+                                    <strong class="text-light">Documento</strong>
                                 </div>
-                                <div class="col-4 text-center border">
-                                    <strong>Calificación</strong>
+                                <div class="col-4 text-center border bg-primary">
+                                    <strong class="text-light">Calificación</strong>
                                 </div>
                             </div>
                       ';
@@ -89,7 +89,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
                             while($rowProm = $resultadoProm->fetch_assoc()){
                             
                                 $documento = $rowProm['documento'];
-                                $doc = "SELECT * FROM catalogo_documentos WHERE '$documento'";
+                                $doc = "SELECT * FROM catalogo_documentos WHERE id = '$documento'";
                                 $resultadoDoc = $conn->query($doc);
                                 $rowDoc = $resultadoDoc->fetch_assoc();
 
