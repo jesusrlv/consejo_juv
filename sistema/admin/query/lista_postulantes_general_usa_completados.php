@@ -13,7 +13,7 @@ while($rowSQLUSA = $resultadoSQLUSA->fetch_assoc()){
     $numero = $rowContar['contar'];
     if($numero==9){
     echo'
-    <tr>
+    <tr class="table-primary">
         <td>'.$x.'</td>
         <td>'.$rowSQLUSA['nombre'].'</td>
         <td>'.$rowSQLUSA['curp'].'</td>
@@ -40,9 +40,88 @@ while($rowSQLUSA = $resultadoSQLUSA->fetch_assoc()){
                 '.$numero.'
             </span>
             </a>
-        </td>
-    </tr>
-';
+        </td>';
+        $calificacionProm = "SELECT AVG(calificacion) as promedio FROM calificacion WHERE id_ext='$idDocs'";
+        $resultadoProm = $conn->query($calificacionProm);
+        // $promedio=0;  
+        // while($rowProm = $resultadoProm->fetch_assoc()){
+        $rowProm = $resultadoProm->fetch_assoc();
+            // $promedio=$promedio+$rowProm['calificacion'];
+            $promedio=$rowProm['promedio'];
+            $numero = 2;
+        // }
+        // $totalPromedio = $promedio / $numero;
+        echo'
+            <td>
+                '.round($promedio,PHP_ROUND_HALF_DOWN).'
+            </td>'; 
+    
+    
+            echo'
+    
+        </tr>
+        <tr>
+            <td colspan="8">
+                <div class="accordion accordion-flush" id="accordionFlushExample'.$rowSQL['id'].'">
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne'.$rowSQL['id'].'" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <i class="bi bi-card-checklist me-2"></i> Descripción de calificaciones
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne'.$rowSQL['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowSQL['id'].'">
+                        <div class="accordion-body text-start">
+                        <div class="row">
+                                    <div class="col-4 text-center border bg-primary">
+                                        <strong class="text-light">Jurado</strong>
+                                    </div>
+                                    <div class="col-4 text-center border bg-primary">
+                                        <strong class="text-light">Documento</strong>
+                                    </div>
+                                    <div class="col-4 text-center border bg-primary">
+                                        <strong class="text-light">Calificación</strong>
+                                    </div>
+                                </div>
+                          ';
+                                $califProm = "SELECT * FROM calificacion WHERE id_ext ='$idDocs'";
+                                $resultadoProm = $conn->query($califProm);
+                                
+                                while($rowProm = $resultadoProm->fetch_assoc()){
+                                
+                                    $documento = $rowProm['documento'];
+                                    $doc = "SELECT * FROM catalogo_documentos WHERE id = '$documento'";
+                                    $resultadoDoc = $conn->query($doc);
+                                    $rowDoc = $resultadoDoc->fetch_assoc();
+    
+                                    $jur = $rowProm['id_jurado'];
+                                    $jurado = "SELECT * FROM usr WHERE id = '$jur'";
+                                    $resultadoJur = $conn->query($jurado);
+                                    $rowJur = $resultadoJur->fetch_assoc();
+                                    
+                                    echo '
+                                    <div class="row">
+                                        <div class="col-4 text-center border">
+                                            '.$rowJur['nombre'].'
+                                        </div>
+                                        <div class="col-4 text-center border">
+                                            '.$rowDoc['documento'].'
+                                        </div>
+                                        <div class="col-4 text-center border">
+                                            '.$rowProm['calificacion'].'
+                                        </div>
+                                    </div>';
+                                }
+    
+                            echo'    
+                            <hr>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            </td>
+        </tr>
+    ';
 }
 }
 

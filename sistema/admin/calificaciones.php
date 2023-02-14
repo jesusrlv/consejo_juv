@@ -6,6 +6,7 @@ $usr = $_SESSION['usr'];
 $nombre = $_SESSION['nombre'];
 $perfil = $_SESSION['perfil'];
 $idQ = $_REQUEST['id'];
+$tipoPostulante = $_REQUEST['postulacion'];
 
 ?>
 <!doctype html>
@@ -147,8 +148,8 @@ $idQ = $_REQUEST['id'];
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
-          <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a>
-          <a href="#seccion_USA" class="btn btn-primary my-2"><i class="bi bi-flag-fill text-danger"></i> Postulantes USA</a>
+          <!-- <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a> -->
+          <a href="index.php" class="btn btn-primary my-2"><i class="bi bi-arrow-bar-left text-light"></i> Regresar Dashboard</a>
         </p>
       </div>
     </div>
@@ -156,29 +157,29 @@ $idQ = $_REQUEST['id'];
 
   <div class="album py-5 bg-light">
     <div class="container">
-    <nav class="navbar bg-body-tertiary">
+    <!-- <nav class="navbar bg-body-tertiary">
       <form class="container-fluid justify-content-start">
         <a href="completados.php" class="btn btn-outline-success me-2" type="button"><i class="bi bi-check-circle-fill"></i> Completados</a>
         <a href="no_completados.php" class="btn btn-sm btn-outline-danger" type="button"><i class="bi bi-x-circle-fill"></i> No completados</a>
       </form>
-    </nav>
+    </nav> -->
       <div class="mb-4">
         <p><span id="seccion_MX"></span>
           <p class="h2">
-          <i class="bi bi-flag-fill text-success"></i> Calificaciones Mx | 
+          <i class="bi bi-award-fill text-success"></i> Calificaciones | 
               <a href="#inicio">
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
           </p>
         </p>
-        <p><small>Postulantes nacidos en <strong>el estado de Zacatecas</strong>.</small></p>
+        <p><small>Detalle de calificaciones del <strong>expediente completado</strong>.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="input-group mb-3">
+      <!-- <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
         <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput">
-      </div>
+      </div> -->
         <table class="table">
           <thead class="text-light text-center" style="background:#b23933">
             <tr>
@@ -199,9 +200,6 @@ $idQ = $_REQUEST['id'];
       </div><!-- row -->
     </div>
   </div>
-
-  
-
 </main>
 
 <footer class="text-light py-5" style="background:#b23933">
@@ -229,23 +227,4 @@ $idQ = $_REQUEST['id'];
         scrollTop: position
     } /* speed */ );
 });
-
-$(document).ready(function () {
-        $("#myInput").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-$(document).ready(function () {
-        $("#myInput2").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
-            $("#myTable2 tr").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
 </script>
-
-<!-- modal datos visualizar -->

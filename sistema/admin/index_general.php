@@ -194,7 +194,7 @@ $perfil = $_SESSION['perfil'];
           </thead>
           <tbody class="text-center" id="myTable">
             <?php
-            include('query/lista_postulantes_general_completados.php');
+            include('query/lista_postulantes_general.php');
             ?>
           </tbody>
         </table>
@@ -234,7 +234,7 @@ $perfil = $_SESSION['perfil'];
           </thead>
           <tbody class="text-center" id="myTable2">
             <?php
-            include('query/lista_postulantes_general_usa_completados.php');
+            include('query/lista_postulantes_general_usa.php');
             ?>
           </tbody>
         </table>
@@ -256,7 +256,7 @@ $perfil = $_SESSION['perfil'];
   </div>
 </footer>
 
-    <!-- <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
   </body>
 </html>

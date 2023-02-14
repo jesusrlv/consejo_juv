@@ -1,9 +1,7 @@
 <?php
 include('qc.php');
 // Mx
-// $sqlPostulantes ="SELECT * FROM usr WHERE perfil = 1";
-// $calificacionProm = "SELECT AVG(calificacion) as promedio FROM calificacion WHERE id_ext='$idDocs'";
-$sqlPostulantes ="SELECT usr.id as id, usr.nombre as nombre, usr.edad as edad, usr.municipio as municipio, usr.telefono as telefono, usr.curp as curp, AVG(calificacion.calificacion) as promedio, calificacion.documento as documento, calificacion.id_jurado as id_jurado, calificacion.calificacion as calificacion FROM usr INNER JOIN calificacion ON usr.id = calificacion.id_ext WHERE usr.perfil = 1 GROUP BY calificacion.calificacion ORDER BY promedio LIMIT 1";
+$sqlPostulantes ="SELECT * FROM usr WHERE perfil = '$tipoPostulante' AND id  = '$idQ'";
 $resultadoSQL = $conn->query($sqlPostulantes);
 $x = 0;
 while($rowSQL = $resultadoSQL->fetch_assoc()){
@@ -15,19 +13,11 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
     $numero = $rowContar['contar'];
     if($numero==9){
     echo'
-    <tr class="table-primary">
+    <tr>
         <td>'.$x.'</td>
         <td>'.$rowSQL['nombre'].'</td>
-        <td>'.$rowSQL['curp'].'</td>
-        <td>'.$rowSQL['edad'].'</td>
-        ';
-    $mun = $rowSQL['municipio'];
-    $sqlMunicipio = "SELECT * FROM municipio WHERE id = '$mun'";
-    $resultadoMunicipio = $conn -> query($sqlMunicipio);
-    $rowMunicipio = $resultadoMunicipio->fetch_assoc();    
+        ';    
     echo'
-    <td>'.$rowMunicipio['municipio'].'</td>
-    <td>'.$rowSQL['telefono'].'</td>
         <td>
             <a href="listado_docs.php?id='.$rowSQL['id'].'">';
         if ($numero == 0){
@@ -50,10 +40,14 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
             </span>
             </a>
         </td>';
-    // $calificacionProm = "SELECT AVG(calificacion) as promedio FROM calificacion WHERE id_ext='$idDocs'";
-    // $resultadoProm = $conn->query($calificacionProm);
-    // $rowProm = $resultadoProm->fetch_assoc();
-        $promedio=$rowSQL['promedio'];
+    // $calificacionProm = "SELECT * FROM calificacion WHERE id_ext='$idDocs'";
+    $calificacionProm = "SELECT AVG(calificacion) as promedio FROM calificacion WHERE id_ext='$idDocs'";
+    $resultadoProm = $conn->query($calificacionProm);
+    // $promedio=0;  
+    // while($rowProm = $resultadoProm->fetch_assoc()){
+    $rowProm = $resultadoProm->fetch_assoc();
+        // $promedio=$promedio+$rowProm['calificacion'];
+        $promedio=$rowProm['promedio'];
         $numero = 2;
     // }
     // $totalPromedio = $promedio / $numero;
@@ -67,12 +61,12 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
 
     </tr>
     <tr>
-        <td colspan="8">
+        <td colspan="4">
             <div class="accordion accordion-flush" id="accordionFlushExample'.$rowSQL['id'].'">
                 <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne'.$rowSQL['id'].'" aria-expanded="false" aria-controls="flush-collapseOne">
-                    <i class="bi bi-card-checklist me-2"></i> Descripción de calificaciones
+                    <i class="bi bi-123 me-2"></i> Descripción de calificaciones
                     </button>
                 </h2>
                 <div id="flush-collapseOne'.$rowSQL['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowSQL['id'].'">
@@ -89,7 +83,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
                                 </div>
                             </div>
                       ';
-                            $califProm = "SELECT * FROM calificacion WHERE id_ext ='$idDocs'";
+                            $califProm = "SELECT * FROM calificacion WHERE id_ext ='$idQ'";
                             $resultadoProm = $conn->query($califProm);
                             
                             while($rowProm = $resultadoProm->fetch_assoc()){

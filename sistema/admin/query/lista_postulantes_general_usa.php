@@ -40,7 +40,7 @@ while($rowSQLUSA = $resultadoSQLUSA->fetch_assoc()){
             </span>
             </a>
         </td>
-        <td><a href="calificaciones.php?id='.$rowSQLUSA['id'].'" type="button" class="btn btn-primary btn-sm">Calificaciones</a></td>
+        <td><a href="calificaciones.php?id='.$rowSQLUSA['id'].'&postulacion=4" type="button" class="btn btn-primary btn-sm">Calificaciones</a></td>
     </tr>
 ';
 }
