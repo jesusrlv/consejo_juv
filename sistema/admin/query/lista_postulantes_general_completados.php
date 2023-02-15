@@ -4,7 +4,7 @@ include('qc.php');
 // $sqlPostulantes ="SELECT * FROM usr WHERE perfil = 1";
 // $calificacionProm = "SELECT AVG(calificacion) as promedio FROM calificacion WHERE id_ext='$idDocs'";
 // $sqlPostulantes ="SELECT usr.id as id, usr.nombre as nombre, usr.edad as edad, usr.municipio as municipio, usr.telefono as telefono, usr.curp as curp, AVG(calificacion.calificacion) as promedio, calificacion.documento as documento, calificacion.id_jurado as id_jurado, calificacion.calificacion as calificacion FROM usr INNER JOIN calificacion ON usr.id = calificacion.id_ext WHERE usr.perfil = 1 GROUP BY calificacion.calificacion ORDER BY promedio LIMIT 1";
-$sqlPostulantes ="SELECT AVG(calificacion.calificacion) as promedio, calificacion.id_ext1 as id FROM calificacion ORDER BY promedio ASC GROUP BY id";
+$sqlPostulantes ="SELECT AVG(calificacion) as promedio, id_ext as id FROM calificacion GROUP BY id_ext ORDER BY promedio DESC";
 $resultadoSQL = $conn->query($sqlPostulantes);
 $x = 0;
 while($rowSQL = $resultadoSQL->fetch_assoc()){
@@ -15,20 +15,25 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
     $rowContar = $resultadoContar -> fetch_assoc();
     $numero = $rowContar['contar'];
     if($numero==9){
+
+    $datos ="SELECT * FROM usr WHERE id = '$idDocs'";
+    $resultadoDatos = $conn->query($datos);
+    $rowDatos = $resultadoDatos->fetch_assoc();
+    
     echo'
     <tr class="table-primary">
         <td>'.$x.'</td>
-        <td>'.$rowSQL['nombre'].'</td>
-        <td>'.$rowSQL['curp'].'</td>
-        <td>'.$rowSQL['edad'].'</td>
+        <td>'.$rowDatos['nombre'].'</td>
+        <td>'.$rowDatos['curp'].'</td>
+        <td>'.$rowDatos['edad'].'</td>
         ';
-    $mun = $rowSQL['municipio'];
+    $mun = $rowDatos['municipio'];
     $sqlMunicipio = "SELECT * FROM municipio WHERE id = '$mun'";
     $resultadoMunicipio = $conn -> query($sqlMunicipio);
     $rowMunicipio = $resultadoMunicipio->fetch_assoc();    
     echo'
     <td>'.$rowMunicipio['municipio'].'</td>
-    <td>'.$rowSQL['telefono'].'</td>
+    <td>'.$rowDatos['telefono'].'</td>
         <td>
             <a href="listado_docs.php?id='.$rowSQL['id'].'">';
         if ($numero == 0){
@@ -69,14 +74,14 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
     </tr>
     <tr>
         <td colspan="8">
-            <div class="accordion accordion-flush" id="accordionFlushExample'.$rowSQL['id'].'">
+            <div class="accordion accordion-flush" id="accordionFlushExample'.$rowDatos['id'].'">
                 <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne'.$rowSQL['id'].'" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne'.$rowDatos['id'].'" aria-expanded="false" aria-controls="flush-collapseOne">
                     <i class="bi bi-card-checklist me-2"></i> Descripción de calificaciones
                     </button>
                 </h2>
-                <div id="flush-collapseOne'.$rowSQL['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowSQL['id'].'">
+                <div id="flush-collapseOne'.$rowDatos['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowDatos['id'].'">
                     <div class="accordion-body text-start">
                     <div class="row">
                                 <div class="col-4 text-center border bg-primary">

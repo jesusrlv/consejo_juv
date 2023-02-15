@@ -28,7 +28,6 @@ $tipoPostulante = $_REQUEST['postulacion'];
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
     <script src="../../js/files.js"></script>
-    <!-- <script src="../../js/index.js"></script> -->
 
      <!-- type font -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
