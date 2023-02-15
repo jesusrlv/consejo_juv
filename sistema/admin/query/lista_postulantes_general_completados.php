@@ -55,7 +55,8 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
                 '.$numero.'
             </span>
             </a>
-        </td>';
+        </td>
+        ';
     // $calificacionProm = "SELECT AVG(calificacion) as promedio FROM calificacion WHERE id_ext='$idDocs'";
     // $resultadoProm = $conn->query($calificacionProm);
     // $rowProm = $resultadoProm->fetch_assoc();
@@ -65,7 +66,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
     // $totalPromedio = $promedio / $numero;
     echo'
         <td>
-            '.round($promedio,PHP_ROUND_HALF_DOWN).'
+        <span class="badge text-bg-primary">'.round($promedio,PHP_ROUND_HALF_DOWN).'</span>
         </td>'; 
 
 
