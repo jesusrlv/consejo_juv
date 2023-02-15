@@ -165,7 +165,7 @@ $perfil = $_SESSION['perfil'];
       <div class="mb-4">
         <p><span id="seccion_MX"></span>
           <p class="h2">
-          <i class="bi bi-flag-fill text-success"></i> Postulantes Mx | 
+          <i class="bi bi-flag-fill text-success"></i> Calificaciones Postulantes Mx | 
               <a href="#inicio">
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
@@ -208,7 +208,7 @@ $perfil = $_SESSION['perfil'];
       <div class="mb-4">
         <p><span id="seccion_USA"></span>
           <p class="h2" >
-          <i class="bi bi-flag-fill text-danger"></i> Postulantes USA | 
+          <i class="bi bi-flag-fill text-danger"></i> Calificaciones Postulantes USA | 
             <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
             <p><small>Postulantes Migrantes <strong>de Zacatecas</strong>.</small></p>
       </div>
