@@ -152,8 +152,10 @@ $perfil = $_SESSION['perfil'];
       </div>
     </div>
   </section>
-
+<div class="album py-5 bg-light">
   <div class="container">
+    <p class="text-center fs-1">Categorías</p>
+    <hr>
     <div class="row p-5 mt-3 mb-3  my-auto">
 
       <div class="col-md-6 mt-3">
@@ -198,6 +200,7 @@ $perfil = $_SESSION['perfil'];
     </div>
 
   </div>
+</div>
 
 </main>
 
