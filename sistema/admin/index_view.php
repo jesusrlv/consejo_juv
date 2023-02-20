@@ -146,19 +146,21 @@ $perfil = $_SESSION['perfil'];
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
-          <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a>
-          <a href="#seccion_USA" class="btn btn-primary my-2"><i class="bi bi-flag-fill text-danger"></i> Postulantes USA</a>
+          <!-- <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a>
+          <a href="#seccion_USA" class="btn btn-primary my-2"><i class="bi bi-flag-fill text-danger"></i> Postulantes USA</a> -->
         </p>
       </div>
     </div>
   </section>
 <div class="album py-5 bg-light">
   <div class="container">
-    <p class="text-center fs-1">Categorías</p>
-    <hr>
+    <div class="alert alert-light" role="alert">
+    <p class="text-center fs-1 text-secondary"><i class="bi bi-menu-up"></i><br> Menú</p>
+    </div>
     <div class="row p-5 mt-3 mb-3  my-auto">
 
       <div class="col-md-6 mt-3">
+        <a href="" style="text-decoration: none">
         <div class="card bg-success text-light mx-auto" style="width: 18rem;">
         <i class="bi bi-list-check h1 text-center mt-3"></i>
           <div class="card-body">
@@ -166,8 +168,10 @@ $perfil = $_SESSION['perfil'];
             <p class="card-text text-center">Listado completados.</p>
           </div>
         </div>
+        </a>
       </div>
       <div class="col-md-6 mt-3">
+      <a href="" style="text-decoration: none">
         <div class="card bg-danger text-light mx-auto" style="width: 18rem;">
           <i class="bi bi-list-columns h1 text-center mt-3"></i>
           <div class="card-body">
@@ -175,8 +179,10 @@ $perfil = $_SESSION['perfil'];
             <p class="card-text text-center">Listado no completados.</p>
           </div>
         </div>
+      </a>
       </div>
       <div class="col-md-6 mt-3">
+        <a href="" style="text-decoration: none" class="text-dark">
         <div class="card bg-info mx-auto" style="width: 18rem;">
         <i class="bi bi-list-ol h1 text-center mt-3"></i>
           <div class="card-body">
@@ -184,8 +190,10 @@ $perfil = $_SESSION['perfil'];
             <p class="card-text text-center">Calificaciones.</p>
           </div>
         </div>
+        </a>
       </div>
       <div class="col-md-6 mt-3">
+        <a href="" style="text-decoration: none" class="text-dark">
         <div class="card bg-warning mx-auto" style="width: 18rem;">
         <i class="bi bi-card-list h1 text-center mt-3"></i>
           <div class="card-body">
@@ -193,6 +201,7 @@ $perfil = $_SESSION['perfil'];
             <p class="card-text text-center">Lista completa.</p>
           </div>
         </div>
+        </a>
       </div>
 
       
