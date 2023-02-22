@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $id = $_SESSION['id'];
 $usr = $_SESSION['usr'];
 $nombre = $_SESSION['nombre'];
@@ -114,7 +113,6 @@ $perfil = $_SESSION['perfil'];
         }
           
       }
-      
     </style>
 
     

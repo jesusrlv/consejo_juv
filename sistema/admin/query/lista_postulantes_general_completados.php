@@ -34,6 +34,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
     echo'
     <td>'.$rowMunicipio['municipio'].'</td>
     <td>'.$rowDatos['telefono'].'</td>
+    <td>'.$rowDatos['usr'].'</td>
         <td>
             <a href="listado_docs.php?id='.$rowSQL['id'].'">';
         if ($numero == 0){
