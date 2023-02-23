@@ -5,8 +5,6 @@ $id = $_SESSION['id'];
 $usr = $_SESSION['usr'];
 $nombre = $_SESSION['nombre'];
 $perfil = $_SESSION['perfil'];
-$idQ = $_REQUEST['id'];
-$tipoPostulante = $_REQUEST['postulacion'];
 
 ?>
 <!doctype html>
@@ -28,6 +26,7 @@ $tipoPostulante = $_REQUEST['postulacion'];
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
     <script src="../../js/files.js"></script>
+    <!-- <script src="../../js/index.js"></script> -->
 
      <!-- type font -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,6 +136,7 @@ $tipoPostulante = $_REQUEST['postulacion'];
 </header>
 
 <main>
+
   <section class="text-center container">
     <div class="row py-lg-5"  style="background-image: url('../../assets/img/background.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;width:100%;">
       <div class="col-lg-6 col-md-8 mx-auto rounded bg-light bg-opacity-50 p-2">
@@ -147,8 +147,8 @@ $tipoPostulante = $_REQUEST['postulacion'];
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
-          <!-- <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a> -->
-          <a href="index.php" class="btn btn-primary my-2"><i class="bi bi-arrow-bar-left text-light"></i> Regresar Dashboard</a>
+          <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a>
+          <a href="#seccion_USA" class="btn btn-primary my-2"><i class="bi bi-flag-fill text-danger"></i> Postulantes USA</a>
         </p>
       </div>
     </div>
@@ -156,37 +156,41 @@ $tipoPostulante = $_REQUEST['postulacion'];
 
   <div class="album py-5 bg-light">
     <div class="container">
-    <!-- <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-body-tertiary">
       <form class="container-fluid justify-content-start">
         <a href="completados.php" class="btn btn-outline-success me-2" type="button"><i class="bi bi-check-circle-fill"></i> Completados</a>
         <a href="no_completados.php" class="btn btn-sm btn-outline-danger" type="button"><i class="bi bi-x-circle-fill"></i> No completados</a>
       </form>
-    </nav> -->
+    </nav>
       <div class="mb-4">
         <p><span id="seccion_MX"></span>
           <p class="h2">
-          <i class="bi bi-award-fill text-success"></i> Calificaciones | 
+          <i class="bi bi-flag-fill text-success"></i> Calificaciones Postulantes Mx | 
               <a href="#inicio">
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
           </p>
         </p>
-        <p><small>Detalle de calificaciones del <strong>expediente completado</strong>.</small></p>
+        <p><small>Postulantes nacidos en <strong>el estado de Zacatecas</strong>.</small></p>
       </div>
       
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <!-- <div class="input-group mb-3">
+      <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
         <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput">
-      </div> -->
+      </div>
         <table class="table">
           <thead class="text-light text-center" style="background:#b23933">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Ver documentos</th>
-              <th scope="col">Calificación Promedio</th>
-
+              <th scope="col">CURP</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Municipio</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Email</th>
+              <th scope="col"># Documentos</th>
+              <th scope="col">Calificaciones</th>
             </tr>
           </thead>
           <tbody class="text-center" id="myTable">
@@ -199,6 +203,48 @@ $tipoPostulante = $_REQUEST['postulacion'];
       </div><!-- row -->
     </div>
   </div>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="mb-4">
+        <p><span id="seccion_USA"></span>
+          <p class="h2" >
+          <i class="bi bi-flag-fill text-danger"></i> Calificaciones Postulantes USA | 
+            <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
+            <p><small>Postulantes Migrantes <strong>de Zacatecas</strong>.</small></p>
+      </div>
+      
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput2">
+      </div>
+       
+      <table class="table">
+          <thead class="text-light text-center" style="background:#b23933">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">CURP</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col"># Documentos</th>
+              <th scope="col">Calificaciones</th>
+            </tr>
+          </thead>
+          <tbody class="text-center" id="myTable2">
+            <?php
+            include('query/lista_postulantes_general_usa_completados.php');
+            ?>
+          </tbody>
+        </table>
+     
+
+      </div><!-- row -->
+    </div>
+  </div>
+
 </main>
 
 <footer class="text-light py-5" style="background:#b23933">
@@ -226,4 +272,23 @@ $tipoPostulante = $_REQUEST['postulacion'];
         scrollTop: position
     } /* speed */ );
 });
+
+$(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+$(document).ready(function () {
+        $("#myInput2").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable2 tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
 </script>
+
+<!-- modal datos visualizar -->

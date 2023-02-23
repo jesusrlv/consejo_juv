@@ -62,14 +62,14 @@ while($rowSQLUSA = $resultadoSQLUSA->fetch_assoc()){
         </tr>
         <tr>
             <td colspan="8">
-                <div class="accordion accordion-flush" id="accordionFlushExample'.$rowSQL['id'].'">
+                <div class="accordion accordion-flush" id="accordionFlushExample'.$rowSQLUSA['id'].'">
                     <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne'.$rowSQL['id'].'" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne'.$rowSQLUSA['id'].'" aria-expanded="false" aria-controls="flush-collapseOne">
                         <i class="bi bi-card-checklist me-2"></i> Descripción de calificaciones
                         </button>
                     </h2>
-                    <div id="flush-collapseOne'.$rowSQL['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowSQL['id'].'">
+                    <div id="flush-collapseOne'.$rowSQLUSA['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample'.$rowSQLUSA['id'].'">
                         <div class="accordion-body text-start">
                         <div class="row">
                                     <div class="col-4 text-center border bg-primary">

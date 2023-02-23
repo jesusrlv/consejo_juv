@@ -1,9 +1,12 @@
 <?php
 session_start();
+
 $id = $_SESSION['id'];
 $usr = $_SESSION['usr'];
 $nombre = $_SESSION['nombre'];
 $perfil = $_SESSION['perfil'];
+$idQ = $_REQUEST['id'];
+$tipoPostulante = $_REQUEST['postulacion'];
 
 ?>
 <!doctype html>
@@ -25,7 +28,6 @@ $perfil = $_SESSION['perfil'];
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
     <script src="../../js/files.js"></script>
-    <!-- <script src="../../js/index.js"></script> -->
 
      <!-- type font -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,28 +92,30 @@ $perfil = $_SESSION['perfil'];
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      /* buttons hover */
 
-      /* On screens that are 992px wide or less, go from four columns to two columns */
-      /* tablets, celular horizontal y otros dispositivos */
-      @media screen and (max-width: 2000px) {
-        #texto_{
-          font-size:10px;
-        }
-        #imagen_{
-          width:200px;
-        }
+      /* #botonesFiles:hover {
+    
+        box-shadow: 0 10px 20px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.06);
+        transform: scale(1.03);
+        transition: width 0.8s, height 0.8s, transform 0.3s;
         
+      } */
+      .card{
+        box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
       }
-      /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+      .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+        transition: width 0.8s, height 0.8s, transform 0.3s;
+      }
+     
       /* CELULAR */
       @media screen and (max-width: 600px) {
-        #texto_{
-          font-size:10px;
+        .card:active{
+          transform: scale(1.03);
+          transition: width 0.3s, height 0.3s, transform 0.3s;
         }
-        #imagen_{
-          width:100%;
-        }
-          
       }
     </style>
 
@@ -125,7 +129,7 @@ $perfil = $_SESSION['perfil'];
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
-        <strong class="text-dark" id="texto_">ADMINISTRADOR | Consejo Juvenil 2023</strong>
+        <strong class="text-dark">ADMINISTRADOR | Consejo Juvenil 2023</strong>
       </a>
       <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-dark"><i class="bi bi-door-open"></i> Salir</a>
     </div>
@@ -133,10 +137,9 @@ $perfil = $_SESSION['perfil'];
 </header>
 
 <main>
-
   <section class="text-center container">
-    <div class="row py-lg-5 mx-auto" style="background-image: url('../../assets/img/background.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;width:100%;">
-      <div class="col-lg-6 col-md-8 mx-auto rounded bg-light bg-opacity-50 p-2" id="imagen_">
+    <div class="row py-lg-5"  style="background-image: url('../../assets/img/background.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;width:100%;">
+      <div class="col-lg-6 col-md-8 mx-auto rounded bg-light bg-opacity-50 p-2">
         <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
         <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
         <h2 class="fw-bold" style="color:#5a5557"><i class="bi bi-person-circle"></i></h2>
@@ -144,71 +147,58 @@ $perfil = $_SESSION['perfil'];
         <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
-          <!-- <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a>
-          <a href="#seccion_USA" class="btn btn-primary my-2"><i class="bi bi-flag-fill text-danger"></i> Postulantes USA</a> -->
+          <!-- <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a> -->
+          <a href="index.php" class="btn btn-primary my-2"><i class="bi bi-arrow-bar-left text-light"></i> Regresar Dashboard</a>
         </p>
       </div>
     </div>
   </section>
-<div class="album py-5 bg-light">
-  <div class="container">
-    <div class="alert alert-light" role="alert">
-    <p class="text-center fs-1 text-secondary"><i class="bi bi-menu-up"></i><br> Menú</p>
-    </div>
-    <div class="row p-5 mt-3 mb-3  my-auto">
 
-      <div class="col-md-6 mt-3">
-        <a href="" style="text-decoration: none">
-        <div class="card bg-success text-light mx-auto" style="width: 18rem;">
-        <i class="bi bi-list-check h1 text-center mt-3"></i>
-          <div class="card-body">
-            <p class="card-text text-center fs-1">1</p>
-            <p class="card-text text-center">Listado completados.</p>
-          </div>
-        </div>
-        </a>
+  <div class="album py-5 bg-light">
+    <div class="container">
+    <!-- <nav class="navbar bg-body-tertiary">
+      <form class="container-fluid justify-content-start">
+        <a href="completados.php" class="btn btn-outline-success me-2" type="button"><i class="bi bi-check-circle-fill"></i> Completados</a>
+        <a href="no_completados.php" class="btn btn-sm btn-outline-danger" type="button"><i class="bi bi-x-circle-fill"></i> No completados</a>
+      </form>
+    </nav> -->
+      <div class="mb-4">
+        <p><span id="seccion_MX"></span>
+          <p class="h2">
+          <i class="bi bi-award-fill text-success"></i> Calificaciones | 
+              <a href="#inicio">
+                <i class="bi bi-arrow-bar-up"></i>
+              </a>
+          </p>
+        </p>
+        <p><small>Detalle de calificaciones del <strong>expediente completado</strong>.</small></p>
       </div>
-      <div class="col-md-6 mt-3">
-      <a href="" style="text-decoration: none">
-        <div class="card bg-danger text-light mx-auto" style="width: 18rem;">
-          <i class="bi bi-list-columns h1 text-center mt-3"></i>
-          <div class="card-body">
-            <p class="card-text text-center fs-1">2</p>
-            <p class="card-text text-center">Listado no completados.</p>
-          </div>
-        </div>
-      </a>
-      </div>
-      <div class="col-md-6 mt-3">
-        <a href="" style="text-decoration: none" class="text-dark">
-        <div class="card bg-info mx-auto" style="width: 18rem;">
-        <i class="bi bi-list-ol h1 text-center mt-3"></i>
-          <div class="card-body">
-            <p class="card-text text-center fs-1">3</p>
-            <p class="card-text text-center">Calificaciones.</p>
-          </div>
-        </div>
-        </a>
-      </div>
-      <div class="col-md-6 mt-3">
-        <a href="" style="text-decoration: none" class="text-dark">
-        <div class="card bg-warning mx-auto" style="width: 18rem;">
-        <i class="bi bi-card-list h1 text-center mt-3"></i>
-          <div class="card-body">
-            <p class="card-text text-center fs-1">4</p>
-            <p class="card-text text-center">Lista completa.</p>
-          </div>
-        </div>
-        </a>
-      </div>
-
       
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <!-- <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput">
+      </div> -->
+        <table class="table">
+          <thead class="text-light text-center" style="background:#b23933">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Ver documentos</th>
+              <th scope="col">Calificación Promedio</th>
 
+            </tr>
+          </thead>
+          <tbody class="text-center" id="myTable">
+            <?php
+            include('query/lista_postulantes_general_completados.php');
+            ?>
+          </tbody>
+        </table>
+       
+      </div><!-- row -->
     </div>
-
   </div>
-</div>
-
 </main>
 
 <footer class="text-light py-5" style="background:#b23933">
@@ -236,23 +226,4 @@ $perfil = $_SESSION['perfil'];
         scrollTop: position
     } /* speed */ );
 });
-
-$(document).ready(function () {
-        $("#myInput").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-$(document).ready(function () {
-        $("#myInput2").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
-            $("#myTable2 tr").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
 </script>
-
-<!-- modal datos visualizar -->

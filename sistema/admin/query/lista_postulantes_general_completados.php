@@ -75,7 +75,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
 
     </tr>
     <tr>
-        <td colspan="8">
+        <td colspan="9">
             <div class="accordion accordion-flush" id="accordionFlushExample'.$rowDatos['id'].'">
                 <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
