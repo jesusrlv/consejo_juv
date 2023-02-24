@@ -54,7 +54,22 @@ if($no_resultados == 1){
         
             $mail->send();
 
-            
+            if($mail->send){
+                echo'
+                <script>
+                    alert("Se envío el correo");
+                </script>
+                ';
+                header("Location: ../index.html");
+            }
+            else{
+                echo'
+                <script>
+                    alert("No se envío el correo");
+                </script>
+                ';
+                header("Location: ../index.html");
+            }
 
         }catch (Exception $e) {
             echo "
