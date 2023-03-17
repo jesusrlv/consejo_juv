@@ -12,6 +12,11 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
     $rowContar = $resultadoContar -> fetch_assoc();
     $numero = $rowContar['contar'];
     if($numero == 9){
+        $calif = "SELECT * FROM calificacion WHERE id_ext = '$idDocs'";
+        $resultadoCalif = $conn->$query($calif);
+        $rowFila = $resultadoCalif->num_rows;
+
+
     $x++;
     echo'
     <tr>
@@ -55,6 +60,23 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
             </span>
             </a>
         </td>
+        <td>';
+
+        	if($rowFila == null || $rowFila == 0){
+        	echo'
+        	Sin calificar';
+        	}
+        	else if($rowFila == 1){
+        	echo'
+        	Falta calificar 1 documento';
+        	}
+        	else if($rowFila == 2){
+        	echo'
+        	Calificado';
+        	}
+        
+            echo'
+            </td>
     </tr>
 ';
 }

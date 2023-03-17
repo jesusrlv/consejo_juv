@@ -398,3 +398,28 @@ function loaded() {
         }
     });
 }
+
+// BLOQUEO DE MODALS
+function bloquearMDS(){
+    // var dateBLQ = '2023-02-04,00:00:01';
+    let dateBLQ = new Date("2023-03-02 00:00:01");
+    $.ajax({
+            type: "POST",
+            url: 'prcd/date.php',
+            dataType:'json',
+            data:{
+                dateBLQ:dateBLQ
+            },
+            success: function(response)
+            {
+                // var jsonData = JSON.parse(response);
+                var jsonData = JSON.parse(JSON.stringify(response));
+                // user is logged in successfully in the back-end
+                // let's redirect
+                if (jsonData.success == "1")
+                {
+                    document.getElementById('bloquearMDL').hidden = true;
+                }
+            }
+    });
+}
